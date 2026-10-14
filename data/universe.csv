@@ -1,0 +1,832 @@
+ticker,index_ticker,name,sector,sub_industry,cik,first_date,last_date,years_in_index,in_index_at_end,delisted,has_prices,price_start,has_fundamentals,duplicate_share_class,reused_ticker_suspect,info_source
+A,A,Agilent Technologies,Health Care,Life Sciences Tools & Services,1090872.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AABA,AABA,,,,,2010-01-01,2017-06-18,7.46,False,True,False,,False,False,False,
+AAL,AAL,American Airlines Group Inc.,Industrials,,6201.0,2015-03-23,2024-09-22,9.51,False,True,True,2008-12-01,True,False,False,sec+yahoo
+AAP,AAP,Advance Auto Parts Inc,Consumer Discretionary,,1158449.0,2015-07-09,2023-08-24,8.13,False,True,True,2008-12-01,True,False,False,sec+yahoo
+AAPL,AAPL,Apple Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",320193.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ABBV,ABBV,AbbVie,Health Care,Biotechnology,1551152.0,2013-01-02,2025-12-31,13.0,True,False,True,2013-01-02,True,False,False,wikipedia
+ABC,ABC,,,,,2010-01-01,2023-08-29,13.66,False,True,False,,False,False,False,
+ABMD,ABMD,,,,,2018-05-31,2022-12-21,4.56,False,True,False,,False,False,False,
+ABNB,ABNB,Airbnb,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1559720.0,2023-09-18,2025-12-31,2.29,True,False,True,2020-12-10,True,False,False,wikipedia
+ABT,ABT,Abbott Laboratories,Health Care,Health Care Equipment,1800.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ACGL,ACGL,Arch Capital Group,Financials,Property & Casualty Insurance,947484.0,2022-11-01,2025-12-31,3.17,True,False,True,2008-12-01,True,False,False,wikipedia
+ACN,ACN,Accenture,Information Technology,IT Consulting & Other Services,1467373.0,2011-07-06,2025-12-31,14.49,True,False,True,2008-12-01,True,False,False,wikipedia
+ACS,ACS,,,,,2010-01-01,2010-02-07,0.1,False,True,False,,False,False,False,
+ADBE,ADBE,Adobe Inc.,Information Technology,Application Software,796343.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ADI,ADI,Analog Devices,Information Technology,Semiconductors,6281.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ADM,ADM,Archer Daniels Midland,Consumer Staples,Agricultural Products & Services,7084.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ADP,ADP,Automatic Data Processing,Industrials,Human Resource & Employment Services,8670.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ADS,ADS,,,,,2013-12-23,2020-06-21,6.5,False,True,False,,False,False,False,
+ADSK,ADSK,Autodesk,Information Technology,Application Software,769397.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ADT,ADT,Adt Inc.,,,1703056.0,2012-10-02,2016-05-01,3.58,False,True,False,2018-01-19,False,False,True,sec
+AEE,AEE,Ameren,Utilities,Multi-Utilities,1002910.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AEP,AEP,American Electric Power,Utilities,Electric Utilities,4904.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AES,AES,AES Corporation,Utilities,Independent Power Producers & Energy Traders,874761.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AET,AET,,,,,2010-01-01,2018-11-28,8.91,False,True,False,,False,False,False,
+AFL,AFL,Aflac,Financials,Life & Health Insurance,4977.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AGN,AGN,,,,,2010-01-01,2020-05-11,10.36,False,True,False,,False,False,False,
+AIG,AIG,American International Group,Financials,Multi-line Insurance,5272.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AIV,AIV,Apartment Investment & Management Co,Real Estate,,922864.0,2010-01-01,2020-12-20,10.97,False,True,True,2008-12-01,True,False,False,sec+yahoo
+AIZ,AIZ,Assurant,Financials,Multi-line Insurance,1267238.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AJG,AJG,Arthur J. Gallagher & Co.,Financials,Insurance Brokers,354190.0,2016-05-31,2025-12-31,9.59,True,False,True,2008-12-01,True,False,False,wikipedia
+AKAM,AKAM,Akamai Technologies,Information Technology,Internet Services & Infrastructure,1086222.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AKS,AKS,,,,,2010-01-01,2011-12-18,1.96,False,True,False,,False,False,False,
+ALB,ALB,Albemarle Corporation,Materials,Specialty Chemicals,915913.0,2016-07-01,2025-12-31,9.5,True,False,True,2008-12-01,True,False,False,wikipedia
+ALGN,ALGN,Align Technology,Health Care,Health Care Supplies,1097149.0,2017-06-19,2025-12-31,8.54,True,False,True,2008-12-01,True,False,False,wikipedia
+ALK,ALK,"Alaska Air Group, Inc.",Industrials,,766421.0,2016-05-13,2023-12-17,7.6,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ALL,ALL,Allstate,Financials,Property & Casualty Insurance,899051.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ALLE,ALLE,Allegion,Industrials,Building Products,1579241.0,2013-12-02,2025-12-31,12.08,True,False,True,2013-11-18,True,False,False,wikipedia
+ALTR,ALTR,,,,,2010-01-01,2015-12-27,5.99,False,True,False,,False,False,False,
+ALXN,ALXN,,,,,2012-05-25,2021-07-20,9.16,False,True,False,,False,False,False,
+AMAT,AMAT,Applied Materials,Information Technology,Semiconductor Materials & Equipment,6951.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AMCR,AMCR,Amcor,Materials,Paper & Plastic Packaging Products & Materials,1748790.0,2019-06-07,2025-12-31,6.57,True,False,True,2012-05-15,True,False,False,wikipedia
+AMD,AMD,Advanced Micro Devices,Information Technology,Semiconductors,2488.0,2010-01-01,2025-12-31,12.51,True,False,True,2008-12-01,True,False,False,wikipedia
+AME,AME,Ametek,Industrials,Electrical Components & Equipment,1037868.0,2013-09-23,2025-12-31,12.27,True,False,True,2008-12-01,True,False,False,wikipedia
+AMG,AMG,"Affiliated Managers Group, Inc.",Financials,,1004434.0,2014-07-01,2019-12-22,5.48,False,True,True,2008-12-01,True,False,False,sec+yahoo
+AMGN,AMGN,Amgen,Health Care,Biotechnology,318154.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AMP,AMP,Ameriprise Financial,Financials,Asset Management & Custody Banks,820027.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AMT,AMT,American Tower,Real Estate,Telecom Tower REITs,1053507.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AMTM,AMTM,"Amentum Holdings, Inc.",Industrials,,2011286.0,2024-09-30,2024-12-22,0.23,False,True,True,2024-09-24,True,False,False,sec+yahoo
+AMZN,AMZN,Amazon,Consumer Discretionary,Broadline Retail,1018724.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AN,AN,"Autonation, Inc.",Consumer Discretionary,,350698.0,2010-01-01,2017-08-07,7.6,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ANDV,ANDV,,,,,2010-01-01,2018-09-30,8.75,False,True,False,,False,False,False,
+ANET,ANET,Arista Networks,Information Technology,Communications Equipment,1596532.0,2018-08-28,2025-12-31,7.35,True,False,True,2014-06-06,True,False,False,wikipedia
+ANF,ANF,Abercrombie & Fitch Co /De/,Consumer Discretionary,,1018840.0,2010-01-01,2013-12-22,3.98,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ANRZQ,ANRZQ,,,,,2011-06-02,2012-10-01,1.34,False,True,False,,False,False,False,
+ANSS,ANSS,,,,,2017-06-19,2025-07-17,8.08,False,True,False,,False,False,False,
+ANTM,ANTM,,,,,2010-01-01,2022-06-27,12.49,False,True,False,,False,False,False,
+AON,AON,Aon plc,Financials,Insurance Brokers,315293.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AOS,AOS,A. O. Smith,Industrials,Building Products,91142.0,2017-07-26,2025-12-31,8.44,True,False,True,2008-12-01,True,False,False,wikipedia
+APA,APA,APA Corporation,Energy,Oil & Gas Exploration & Production,1841666.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+APC,APC,Arko Petroleum Corp.,,,2080921.0,2010-01-01,2019-08-08,9.6,False,True,False,,False,False,False,sec
+APD,APD,Air Products,Materials,Industrial Gases,2969.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+APH,APH,Amphenol,Information Technology,Electronic Components,820313.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+APO,APO,Apollo Global Management,Financials,Asset Management & Custody Banks,1858681.0,2024-12-23,2025-12-31,1.02,True,False,True,2011-03-30,True,False,False,wikipedia
+APOL,APOL,,,,,2010-01-01,2013-06-30,3.5,False,True,False,,False,False,False,
+APP,APP,AppLovin,Communication Services,Advertising,1751008.0,2025-09-22,2025-12-31,0.28,True,False,True,2021-04-15,True,False,False,wikipedia
+APTV,APTV,Aptiv,Consumer Discretionary,Automotive Parts & Equipment,1521332.0,2012-12-24,2025-12-31,13.02,True,False,True,2011-11-17,True,False,False,wikipedia
+ARE,ARE,Alexandria Real Estate Equities,Real Estate,Office REITs,1035443.0,2017-03-20,2025-12-31,8.79,True,False,True,2008-12-01,True,False,False,wikipedia
+ARES,ARES,Ares Management,Financials,Asset Management & Custody Banks,1176948.0,2025-12-11,2025-12-31,0.06,True,False,True,2014-05-02,True,False,False,wikipedia
+ARG,ARG,,,,,2010-01-01,2016-05-22,6.39,False,True,False,,False,False,False,
+ARNC,ARNC,,,,,2010-01-01,2020-04-05,10.26,False,True,False,,False,False,False,
+ATGE,ATGE,,,,,2010-01-01,2012-09-30,2.75,False,True,False,,False,False,False,
+ATI,ATI,Ati Inc,Industrials,,1018963.0,2010-01-01,2015-07-01,5.5,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ATO,ATO,Atmos Energy,Utilities,Gas Utilities,731802.0,2019-02-15,2025-12-31,6.88,True,False,True,2008-12-01,True,False,False,wikipedia
+ATVI,ATVI,,,,,2015-08-31,2023-10-17,8.13,False,True,False,,False,False,False,
+AVB,AVB,,,,,2010-01-01,2025-12-31,16.0,True,False,False,,False,False,False,
+AVGO,AVGO,Broadcom,Information Technology,Semiconductors,1730168.0,2014-05-08,2025-12-31,11.65,True,False,True,2009-08-06,True,False,False,wikipedia
+AVP,AVP,,,,,2010-01-01,2015-03-22,5.22,False,True,False,,False,False,False,
+AVY,AVY,Avery Dennison,Materials,Paper & Plastic Packaging Products & Materials,8818.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AWK,AWK,American Water Works,Utilities,Water Utilities,1410636.0,2016-03-04,2025-12-31,9.83,True,False,True,2008-12-01,True,False,False,wikipedia
+AXON,AXON,Axon Enterprise,Industrials,Aerospace & Defense,1069183.0,2023-05-04,2025-12-31,2.66,True,False,True,2008-12-01,True,False,False,wikipedia
+AXP,AXP,American Express,Financials,Consumer Finance,4962.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+AYE,AYE,,,,,2010-01-01,2011-02-27,1.16,False,True,False,,False,False,False,
+AYI,AYI,Acuity Inc. (De),Industrials,,1144215.0,2016-05-03,2018-06-17,2.12,False,True,True,2008-12-01,True,False,False,sec+yahoo
+AZO,AZO,AutoZone,Consumer Discretionary,Automotive Retail,866787.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BA,BA,Boeing,Industrials,Aerospace & Defense,12927.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BAC,BAC,Bank of America,Financials,Diversified Banks,70858.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BALL,BALL,Ball Corporation,Materials,"Metal, Glass & Plastic Containers",9389.0,2022-05-10,2025-12-31,3.65,True,False,True,2008-12-01,True,False,False,wikipedia
+BAX,BAX,Baxter International,Health Care,Health Care Equipment,10456.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BBBY,BBBY,,,,,2010-01-01,2017-07-25,7.56,False,True,False,,False,False,False,
+BBT,BBT,Beacon Financial Corp,,,1108134.0,2010-01-01,2019-12-08,9.94,False,True,False,2008-12-01,False,False,True,sec
+BBWI,BBWI,"Bath & Body Works, Inc.",Consumer Discretionary,,701985.0,2021-08-03,2024-09-30,3.16,False,True,True,2008-12-01,True,False,False,sec+yahoo
+BBY,BBY,Best Buy,Consumer Discretionary,Computer & Electronics Retail,764478.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BCR,BCR,,,,,2010-01-01,2017-12-28,7.99,False,True,False,,False,False,False,
+BDK,BDK,,,,,2010-01-01,2010-03-14,0.2,False,True,False,,False,False,False,
+BDX,BDX,Becton Dickinson,Health Care,Health Care Equipment,10795.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BEAM,BEAM,Beam Therapeutics Inc.,,,1745999.0,2010-01-01,2014-04-30,4.33,False,True,False,2020-02-06,False,False,True,sec
+BEN,BEN,Franklin Resources,Financials,Asset Management & Custody Banks,38777.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BF-B,BF.B,Brown–Forman,Consumer Staples,Distillers & Vintners,14693.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BG,BG,Bunge Global,Consumer Staples,Agricultural Products & Services,1996862.0,2023-03-15,2025-12-31,2.8,True,False,True,2008-12-01,True,False,False,wikipedia
+BHF,BHF,"Brighthouse Financial, Inc.",Financials,,1685040.0,2017-08-07,2019-04-01,1.65,False,True,True,2017-07-17,True,False,False,sec+yahoo
+BHGE,BHGE,,,,,2010-01-01,2019-10-17,9.79,False,True,False,,False,False,False,
+BIG,BIG,,,,,2010-01-01,2013-02-13,3.12,False,True,False,,False,False,False,
+BIIB,BIIB,Biogen,Health Care,Biotechnology,875045.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BIO,BIO,"Bio-Rad Laboratories, Inc.",Health Care,,12208.0,2020-06-22,2024-09-22,4.25,False,True,True,2008-12-01,True,False,False,sec+yahoo
+BJS,BJS,,,,,2010-01-01,2010-04-28,0.32,False,True,False,,False,False,False,
+BK,BK,,,,,2010-01-01,2025-12-31,16.0,True,False,False,,False,False,False,
+BKNG,BKNG,Booking Holdings,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1075531.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BKR,BKR,Baker Hughes,Energy,Oil & Gas Equipment & Services,1701605.0,2019-10-18,2025-12-31,6.21,True,False,True,2008-12-01,True,False,False,wikipedia
+BLDR,BLDR,"Builders Firstsource, Inc.",Industrials,,1316835.0,2023-12-18,2025-12-31,2.04,True,False,True,2008-12-01,True,False,False,sec+yahoo
+BLK,BLK,BlackRock,Financials,Asset Management & Custody Banks,2012383.0,2011-04-04,2025-12-31,14.75,True,False,True,2008-12-01,True,False,False,wikipedia
+BLL,BLL,,,,,2010-01-01,2022-05-09,12.35,False,True,False,,False,False,False,
+BMC,BMC,,,,,2010-01-01,2013-09-10,3.69,False,True,False,,False,False,False,
+BMS,BMS,,,,,2010-01-01,2014-12-04,4.93,False,True,False,,False,False,False,
+BMY,BMY,Bristol Myers Squibb,Health Care,Pharmaceuticals,14272.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BNI,BNI,,,,,2010-01-01,2010-02-15,0.13,False,True,False,,False,False,False,
+BR,BR,Broadridge Financial Solutions,Industrials,Data Processing & Outsourced Services,1383312.0,2018-06-18,2025-12-31,7.54,True,False,True,2008-12-01,True,False,False,wikipedia
+BRCM,BRCM,,,,,2010-01-01,2016-01-31,6.08,False,True,False,,False,False,False,
+BRK-B,BRK.B,Berkshire Hathaway,Financials,Multi-Sector Holdings,1067983.0,2010-02-16,2025-12-31,15.87,True,False,True,2008-12-01,True,False,False,wikipedia
+BRO,BRO,Brown & Brown,Financials,Insurance Brokers,79282.0,2021-09-20,2025-12-31,4.28,True,False,True,2008-12-01,True,False,False,wikipedia
+BSX,BSX,Boston Scientific,Health Care,Health Care Equipment,885725.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+BTUUQ,BTUUQ,,,,,2010-01-01,2014-09-21,4.72,False,True,False,,False,False,False,
+BWA,BWA,Borgwarner Inc,Consumer Discretionary,,908255.0,2011-12-19,2025-03-23,13.26,False,True,True,2008-12-01,True,False,False,sec+yahoo
+BX,BX,Blackstone Inc.,Financials,Asset Management & Custody Banks,1393818.0,2023-09-18,2025-12-31,2.29,True,False,True,2008-12-01,True,False,False,wikipedia
+BXLT,BXLT,,,,,2015-07-01,2016-06-02,0.93,False,True,False,,False,False,False,
+BXP,BXP,"BXP, Inc.",Real Estate,Office REITs,1037540.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+C,C,Citigroup,Financials,Diversified Banks,831001.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CA,CA,,,,,2010-01-01,2018-11-05,8.85,False,True,False,,False,False,False,
+CAG,CAG,Conagra Brands Inc.,Consumer Staples,,23217.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,sec+yahoo
+CAH,CAH,Cardinal Health,Health Care,Health Care Distributors,721371.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CAM,CAM,,,,,2010-01-01,2016-04-03,6.26,False,True,False,2025-10-06,False,False,True,
+CARR,CARR,Carrier Global,Industrials,Building Products,1783180.0,2020-04-03,2025-12-31,5.75,True,False,True,2020-03-19,True,False,False,wikipedia
+CAT,CAT,Caterpillar Inc.,Industrials,Construction Machinery & Heavy Transportation Equipment,18230.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CB,CB,Chubb Limited,Financials,Property & Casualty Insurance,896159.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CBE,CBE,,,,,2011-11-23,2012-12-02,1.03,False,True,False,,False,False,False,
+CBOE,CBOE,Cboe Global Markets,Financials,Financial Exchanges & Data,1374310.0,2017-03-01,2025-12-31,8.84,True,False,True,2010-06-15,True,False,False,wikipedia
+CBRE,CBRE,CBRE Group,Real Estate,Real Estate Services,1138118.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CBS,CBS,,,,,2010-01-01,2019-12-04,9.92,False,True,False,,False,False,False,
+CCE,CCE,,,,,2010-01-01,2016-05-30,6.41,False,True,False,,False,False,False,
+CCEP,CCEP,Coca-Cola Europacific Partners Plc,Consumer Staples,,1650107.0,2016-01-04,2016-05-30,0.41,False,True,True,2008-12-01,False,False,False,sec+yahoo
+CCI,CCI,Crown Castle,Real Estate,Telecom Tower REITs,1051470.0,2012-03-13,2025-12-31,13.8,True,False,True,2008-12-01,True,False,False,wikipedia
+CCL,CCL,Carnival Corporation,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",815097.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CDAY,CDAY,,,,,2021-09-20,2024-01-31,2.37,False,True,False,,False,False,False,
+CDNS,CDNS,Cadence Design Systems,Information Technology,Application Software,813672.0,2017-09-18,2025-12-31,8.29,True,False,True,2008-12-01,True,False,False,wikipedia
+CDW,CDW,CDW Corporation,Information Technology,Technology Distributors,1402057.0,2019-09-23,2025-12-31,6.28,True,False,True,2013-06-27,True,False,False,wikipedia
+CE,CE,Celanese Corp,Materials,,1306830.0,2018-12-24,2025-03-23,6.25,False,True,True,2008-12-01,True,False,False,sec+yahoo
+CEG,CEG,Constellation Energy,Utilities,Electric Utilities,1868275.0,2010-01-01,2025-12-31,6.11,True,False,True,2022-01-19,True,False,False,wikipedia
+CELG,CELG,,,,,2010-01-01,2019-11-20,9.89,False,True,False,,False,False,False,
+CEPH,CEPH,,,,,2010-01-01,2011-10-13,1.78,False,True,False,,False,False,False,
+CERN,CERN,,,,,2010-04-30,2022-06-07,12.11,False,True,False,,False,False,False,
+CF,CF,CF Industries,Materials,Fertilizers & Agricultural Chemicals,1324404.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CFG,CFG,Citizens Financial Group,Financials,Regional Banks,759944.0,2016-02-01,2025-12-31,9.92,True,False,True,2014-09-24,True,False,False,wikipedia
+CFN,CFN,,,,,2010-01-01,2015-03-16,5.2,False,True,False,,False,False,False,
+CHD,CHD,Church & Dwight,Consumer Staples,Household Products,313927.0,2015-12-29,2025-12-31,10.01,True,False,True,2008-12-01,True,False,False,wikipedia
+CHK,CHK,,,,,2010-01-01,2018-03-18,8.21,False,True,False,,False,False,False,
+CHRW,CHRW,C.H. Robinson,Industrials,Air Freight & Logistics,1043277.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CHTR,CHTR,Charter Communications,Communication Services,Cable & Satellite,1091667.0,2016-09-08,2025-12-31,9.31,True,False,True,2010-01-05,True,False,False,wikipedia
+CI,CI,Cigna,Health Care,Health Care Services,1739940.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CINF,CINF,Cincinnati Financial,Financials,Property & Casualty Insurance,20286.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CL,CL,Colgate-Palmolive,Consumer Staples,Household Products,21665.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CLF,CLF,Cleveland-Cliffs Inc.,Materials,,764065.0,2010-01-01,2014-04-01,4.25,False,True,True,2008-12-01,True,False,False,sec+yahoo
+CLX,CLX,Clorox,Consumer Staples,Household Products,21076.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CMA,CMA,,,,,2010-01-01,2024-06-23,14.48,False,True,False,,False,False,False,
+CMCSA,CMCSA,Comcast,Communication Services,Cable & Satellite,1166691.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CMCSK,CMCSK,,,,,2015-09-21,2015-12-13,0.23,False,True,False,,False,False,False,
+CME,CME,CME Group,Financials,Financial Exchanges & Data,1156375.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CMG,CMG,Chipotle Mexican Grill,Consumer Discretionary,Restaurants,1058090.0,2011-04-28,2025-12-31,14.68,True,False,True,2008-12-01,True,False,False,wikipedia
+CMI,CMI,Cummins,Industrials,Construction Machinery & Heavy Transportation Equipment,26172.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CMS,CMS,CMS Energy,Utilities,Multi-Utilities,811156.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CNC,CNC,Centene Corporation,Health Care,Managed Health Care,1071739.0,2016-03-30,2025-12-31,9.76,True,False,True,2008-12-01,True,False,False,wikipedia
+CNP,CNP,CenterPoint Energy,Utilities,Multi-Utilities,1130310.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CNX,CNX,Cnx Resources Corp,Energy,,1070412.0,2010-01-01,2016-03-03,6.17,False,True,True,2008-12-01,True,False,False,sec+yahoo
+COF,COF,Capital One,Financials,Consumer Finance,927628.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+COG,COG,,,,,2010-01-01,2021-10-03,11.76,False,True,False,,False,False,False,
+COIN,COIN,Coinbase,Financials,Financial Exchanges & Data,1679788.0,2025-05-19,2025-12-31,0.62,True,False,True,2021-04-14,True,False,False,wikipedia
+COL,COL,,,,,2010-01-01,2018-11-26,8.9,False,True,False,,False,False,False,
+COO,COO,Cooper Companies (The),Health Care,Health Care Supplies,711404.0,2016-09-23,2025-12-31,9.27,True,False,True,2008-12-01,True,False,False,wikipedia
+COP,COP,ConocoPhillips,Energy,Oil & Gas Exploration & Production,1163165.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+COR,COR,Cencora,Health Care,Health Care Distributors,1140859.0,2023-08-30,2025-12-31,2.34,True,False,True,2008-12-01,True,False,False,wikipedia
+COST,COST,Costco,Consumer Staples,Consumer Staples Merchandise Retail,909832.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+COTY,COTY,Coty Inc.,Consumer Staples,,1024305.0,2016-10-03,2020-09-20,3.97,False,True,True,2013-06-13,True,False,False,sec+yahoo
+COV,COV,,,,,2011-03-01,2015-01-26,3.91,False,True,False,,False,False,False,
+CPAY,CPAY,Corpay,Financials,Transaction & Payment Processing Services,1175454.0,2024-03-25,2025-12-31,1.77,True,False,True,2010-12-15,True,False,False,wikipedia
+CPB,CPB,Campbell'S Co,Consumer Staples,,16732.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,sec+yahoo
+CPGX,CPGX,,,,,2015-07-02,2016-06-30,1.0,False,True,False,,False,False,False,
+CPRI,CPRI,Capri Holdings Ltd,Consumer Discretionary,,1530721.0,2016-01-04,2020-05-11,4.35,False,True,True,2011-12-15,True,False,False,sec+yahoo
+CPRT,CPRT,Copart,Industrials,Diversified Support Services,900075.0,2018-07-02,2025-12-31,7.5,True,False,True,2008-12-01,True,False,False,wikipedia
+CPT,CPT,Camden Property Trust,Real Estate,Multi-Family Residential REITs,906345.0,2022-04-04,2025-12-31,3.75,True,False,True,2008-12-01,True,False,False,wikipedia
+CPWR,CPWR,Ocean Thermal Energy Corp,,,827099.0,2010-01-01,2012-01-02,2.0,False,True,False,2008-12-01,False,False,True,sec
+CRH,CRH,CRH plc,Materials,Construction Materials,849395.0,2025-12-22,2025-12-31,0.03,True,False,True,2008-12-01,True,False,False,wikipedia
+CRL,CRL,Charles River Laboratories,Health Care,Life Sciences Tools & Services,1100682.0,2021-05-14,2025-12-31,4.64,True,False,True,2008-12-01,True,False,False,wikipedia
+CRM,CRM,Salesforce,Information Technology,Application Software,1108524.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CRWD,CRWD,CrowdStrike,Information Technology,Systems Software,1535527.0,2024-06-24,2025-12-31,1.52,True,False,True,2019-06-12,True,False,False,wikipedia
+CSCO,CSCO,Cisco,Information Technology,Communications Equipment,858877.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CSGP,CSGP,CoStar Group,Real Estate,Real Estate Services,1057352.0,2022-09-19,2025-12-31,3.29,True,False,True,2008-12-01,True,False,False,wikipedia
+CSRA,CSRA,,,,,2015-11-30,2018-04-03,2.34,False,True,False,,False,False,False,
+CSX,CSX,CSX Corporation,Industrials,Rail Transportation,277948.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CTAS,CTAS,Cintas,Industrials,Diversified Support Services,723254.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CTL,CTL,,,,,2010-01-01,2020-09-17,10.71,False,True,False,,False,False,False,
+CTLT,CTLT,,,,,2020-09-21,2024-12-22,4.25,False,True,False,,False,False,False,
+CTRA,CTRA,,,,,2021-10-04,2025-12-31,4.24,True,False,False,,False,False,False,
+CTSH,CTSH,Cognizant,Information Technology,IT Consulting & Other Services,1058290.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CTVA,CTVA,"Corteva, Inc.",Materials,,1755672.0,2019-06-03,2025-12-31,6.58,True,False,True,2019-05-24,True,False,False,sec+yahoo
+CTXS,CTXS,,,,,2010-01-01,2022-10-02,12.75,False,True,False,,False,False,False,
+CVC,CVC,,,,,2010-12-20,2016-06-20,5.5,False,True,False,,False,False,False,
+CVH,CVH,,,,,2010-01-01,2013-05-06,3.35,False,True,False,,False,False,False,
+CVNA,CVNA,Carvana,Consumer Discretionary,Automotive Retail,1690820.0,2025-12-22,2025-12-31,0.03,True,False,True,2017-04-28,True,False,False,wikipedia
+CVS,CVS,CVS Health,Health Care,Health Care Services,64803.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CVX,CVX,Chevron Corporation,Energy,Integrated Oil & Gas,93410.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+CXO,CXO,,,,,2016-02-22,2021-01-20,4.91,False,True,False,,False,False,False,
+CZR,CZR,"Caesars Entertainment, Inc.",Consumer Discretionary,,1590895.0,2021-03-22,2025-09-21,4.5,False,True,True,2014-09-22,True,False,False,sec+yahoo
+D,D,Dominion Energy,Utilities,Multi-Utilities,715957.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DAL,DAL,Delta Air Lines,Industrials,Passenger Airlines,27904.0,2013-09-11,2025-12-31,12.31,True,False,True,2008-12-01,True,False,False,wikipedia
+DASH,DASH,DoorDash,Consumer Discretionary,Specialized Consumer Services,1792789.0,2025-03-24,2025-12-31,0.77,True,False,True,2020-12-09,True,False,False,wikipedia
+DAY,DAY,,,,,2024-02-01,2025-12-31,1.92,True,False,False,,False,False,False,
+DD,DD,DuPont,Industrials,Industrial Conglomerates,1666700.0,2010-01-01,2025-12-31,14.25,True,False,True,2008-12-01,True,False,False,wikipedia
+DDOG,DDOG,Datadog,Information Technology,Application Software,1561550.0,2025-07-09,2025-12-31,0.48,True,False,True,2019-09-19,True,False,False,wikipedia
+DE,DE,Deere & Company,Industrials,Agricultural & Farm Machinery,315189.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DECK,DECK,Deckers Brands,Consumer Discretionary,Footwear,910521.0,2024-03-18,2025-12-31,1.79,True,False,True,2008-12-01,True,False,False,wikipedia
+DELL,DELL,Dell Technologies,Information Technology,"Technology Hardware, Storage & Peripherals",1571996.0,2010-01-01,2025-12-31,5.1,True,False,True,2016-08-17,True,False,False,wikipedia
+DF,DF,,,,,2010-01-01,2013-05-23,3.39,False,True,False,,False,False,False,
+DFS,DFS,,,,,2010-01-01,2025-05-18,15.38,False,True,False,,False,False,False,
+DG,DG,Dollar General,Consumer Staples,Consumer Staples Merchandise Retail,29534.0,2012-12-03,2025-12-31,13.08,True,False,True,2009-11-13,True,False,False,wikipedia
+DGX,DGX,Quest Diagnostics,Health Care,Health Care Services,1022079.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DHI,DHI,D. R. Horton,Consumer Discretionary,Homebuilding,882184.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DHR,DHR,Danaher Corporation,Health Care,Life Sciences Tools & Services,313616.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DIS,DIS,Walt Disney Company (The),Communication Services,Movies & Entertainment,1744489.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DISCA,DISCA,,,,,2010-03-01,2022-04-10,12.11,False,True,False,,False,False,False,
+DISCK,DISCK,,,,,2014-08-07,2022-04-10,7.68,False,True,False,,False,False,False,
+DISH,DISH,,,,,2017-03-13,2023-06-19,6.27,False,True,False,,False,False,False,
+DLR,DLR,Digital Realty,Real Estate,Data Center REITs,1297996.0,2016-05-18,2025-12-31,9.62,True,False,True,2008-12-01,True,False,False,wikipedia
+DLTR,DLTR,Dollar Tree,Consumer Staples,Consumer Staples Merchandise Retail,935703.0,2011-12-19,2025-12-31,14.04,True,False,True,2008-12-01,True,False,False,wikipedia
+DNB,DNB,,,,,2010-01-01,2017-04-04,7.26,False,True,False,,False,False,False,
+DNR,DNR,,,,,2010-01-01,2015-03-22,5.22,False,True,False,,False,False,False,
+DO,DO,,,,,2010-01-01,2016-10-02,6.75,False,True,False,,False,False,False,
+DOC,DOC,Healthpeak Properties,Real Estate,Health Care REITs,765880.0,2024-03-04,2025-12-31,1.83,True,False,True,2008-12-01,True,False,False,wikipedia
+DOV,DOV,Dover Corporation,Industrials,Industrial Machinery & Supplies & Components,29905.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DOW,DOW,Dow Inc.,Materials,Commodity Chemicals,1751788.0,2010-01-01,2025-12-31,14.42,True,False,True,2019-03-20,True,False,False,wikipedia
+DPZ,DPZ,Domino's,Consumer Discretionary,Restaurants,1286681.0,2020-05-12,2025-12-31,5.64,True,False,True,2008-12-01,True,False,False,wikipedia
+DRE,DRE,,,,,2017-07-26,2022-10-02,5.19,False,True,False,,False,False,False,
+DRI,DRI,Darden Restaurants,Consumer Discretionary,Restaurants,940944.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DTE,DTE,DTE Energy,Utilities,Multi-Utilities,936340.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DTV,DTV,,,,,2010-01-01,2015-07-26,5.57,False,True,False,,False,False,False,
+DUK,DUK,Duke Energy,Utilities,Electric Utilities,1326160.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DVA,DVA,DaVita,Health Care,Health Care Services,927066.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DVN,DVN,Devon Energy,Energy,Oil & Gas Exploration & Production,1090012.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+DWDP,DWDP,,,,,2017-09-01,2019-06-02,1.75,False,True,False,,False,False,False,
+DXC,DXC,Dxc Technology Co,Information Technology,,1688568.0,2010-01-01,2023-10-01,12.41,False,True,True,2008-12-01,True,False,False,sec+yahoo
+DXCM,DXCM,Dexcom,Health Care,Health Care Equipment,1093557.0,2020-05-12,2025-12-31,5.64,True,False,True,2008-12-01,True,False,False,wikipedia
+EA,EA,,,,,2010-01-01,2025-12-31,16.0,True,False,False,,False,False,False,
+EBAY,EBAY,eBay Inc.,Consumer Discretionary,Broadline Retail,1065088.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ECL,ECL,Ecolab,Materials,Specialty Chemicals,31462.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ED,ED,Consolidated Edison,Utilities,Multi-Utilities,1047862.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EFX,EFX,Equifax,Industrials,Research & Consulting Services,33185.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EG,EG,Everest Group,Financials,Reinsurance,1095073.0,2023-07-10,2025-12-31,2.48,True,False,True,2008-12-01,True,False,False,wikipedia
+EIX,EIX,Edison International,Utilities,Electric Utilities,827052.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EKDKQ,EKDKQ,,,,,2010-01-01,2010-12-19,0.97,False,True,False,,False,False,False,
+EL,EL,Estée Lauder Companies (The),Consumer Staples,Personal Care Products,1001250.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ELV,ELV,Elevance Health,Health Care,Managed Health Care,1156039.0,2022-06-28,2025-12-31,3.51,True,False,True,2008-12-01,True,False,False,wikipedia
+EMC,EMC,,,,,2010-01-01,2016-09-06,6.68,False,True,False,2023-05-15,False,False,True,
+EME,EME,Emcor,Industrials,Construction & Engineering,105634.0,2025-09-22,2025-12-31,0.28,True,False,True,2008-12-01,True,False,False,wikipedia
+EMN,EMN,Eastman Chemical Co,Materials,,915389.0,2010-01-01,2025-11-03,15.84,False,True,True,2008-12-01,True,False,False,sec+yahoo
+EMR,EMR,Emerson Electric,Industrials,Electrical Components & Equipment,32604.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ENDP,ENDP,,,,,2015-01-27,2017-03-01,2.09,False,True,False,,False,False,False,
+ENPH,ENPH,"Enphase Energy, Inc.",Information Technology,,1463101.0,2021-01-07,2025-09-21,4.71,False,True,True,2012-03-30,True,False,False,sec+yahoo
+EOG,EOG,EOG Resources,Energy,Oil & Gas Exploration & Production,821189.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EP,EP,Empire Petroleum Corp,,,887396.0,2010-01-01,2012-05-24,2.4,False,True,False,2008-12-01,False,False,True,sec
+EPAM,EPAM,"Epam Systems, Inc.",Information Technology,,1352010.0,2021-12-14,2025-12-31,4.05,True,False,True,2012-02-08,True,False,False,sec+yahoo
+EQIX,EQIX,Equinix,Real Estate,Data Center REITs,1101239.0,2015-03-23,2025-12-31,10.78,True,False,True,2008-12-01,True,False,False,wikipedia
+EQR,EQR,,,,,2010-01-01,2025-12-31,16.0,True,False,False,,False,False,False,
+EQT,EQT,EQT Corporation,Energy,Oil & Gas Exploration & Production,33213.0,2010-01-01,2025-12-31,12.11,True,False,True,2008-12-01,True,False,False,wikipedia
+ERIE,ERIE,Erie Indemnity,Financials,Insurance Brokers,922621.0,2024-09-23,2025-12-31,1.27,True,False,True,2008-12-01,True,False,False,wikipedia
+ES,ES,Eversource Energy,Utilities,Electric Utilities,72741.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ESRX,ESRX,,,,,2010-01-01,2018-12-20,8.97,False,True,False,,False,False,False,
+ESS,ESS,Essex Property Trust,Real Estate,Multi-Family Residential REITs,920522.0,2014-04-02,2025-12-31,11.75,True,False,True,2008-12-01,True,False,False,wikipedia
+ESV,ESV,,,,,2012-07-31,2016-03-29,3.66,False,True,False,,False,False,False,
+ETFC,ETFC,,,,,2010-01-01,2020-10-06,10.77,False,True,False,,False,False,False,
+ETN,ETN,Eaton Corporation,Industrials,Electrical Components & Equipment,1551182.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ETR,ETR,Entergy,Utilities,Electric Utilities,65984.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ETSY,ETSY,Etsy Inc,Consumer Discretionary,,1370637.0,2020-09-21,2024-09-22,4.01,False,True,True,2015-04-16,True,False,False,sec+yahoo
+EVHC,EVHC,,,,,2016-12-02,2018-10-10,1.86,False,True,False,,False,False,False,
+EVRG,EVRG,Evergy,Utilities,Electric Utilities,1711269.0,2018-06-05,2025-12-31,7.58,True,False,True,2008-12-01,True,False,False,wikipedia
+EW,EW,Edwards Lifesciences,Health Care,Health Care Equipment,1099800.0,2011-04-01,2025-12-31,14.75,True,False,True,2008-12-01,True,False,False,wikipedia
+EXC,EXC,Exelon,Utilities,Electric Utilities,1109357.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EXE,EXE,Expand Energy,Energy,Oil & Gas Exploration & Production,895126.0,2025-03-24,2025-12-31,0.77,True,False,True,2021-02-10,True,False,False,wikipedia
+EXPD,EXPD,Expeditors International,Industrials,Air Freight & Logistics,746515.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EXPE,EXPE,Expedia Group,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1324424.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+EXR,EXR,Extra Space Storage,Real Estate,Self-Storage REITs,1289490.0,2016-01-19,2025-12-31,9.95,True,False,True,2008-12-01,True,False,False,wikipedia
+F,F,Ford Motor Company,Consumer Discretionary,Automobile Manufacturers,37996.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FANG,FANG,Diamondback Energy,Energy,Oil & Gas Exploration & Production,1539838.0,2018-12-03,2025-12-31,7.08,True,False,True,2012-10-12,True,False,False,wikipedia
+FAST,FAST,Fastenal,Industrials,Trading Companies & Distributors,815556.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FB,FB,,,,,2013-12-23,2022-06-08,8.46,False,True,False,2025-06-26,False,False,True,
+FBHS,FBHS,,,,,2016-06-24,2022-12-18,6.49,False,True,False,,False,False,False,
+FCPT,FCPT,"Four Corners Property Trust, Inc.",Real Estate,,1650132.0,2015-11-10,2015-11-16,0.02,False,True,True,2015-11-10,True,False,False,sec+yahoo
+FCX,FCX,Freeport-McMoRan,Materials,Copper,831259.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FDO,FDO,,,,,2010-01-01,2015-07-06,5.51,False,True,False,,False,False,False,
+FDS,FDS,FactSet,Financials,Financial Exchanges & Data,1013237.0,2021-12-20,2025-12-31,4.03,True,False,True,2008-12-01,True,False,False,wikipedia
+FDX,FDX,FedEx,Industrials,Air Freight & Logistics,1048911.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FE,FE,FirstEnergy,Utilities,Electric Utilities,1031296.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FFIV,FFIV,"F5, Inc.",Information Technology,Communications Equipment,1048695.0,2010-12-20,2025-12-31,15.03,True,False,True,2008-12-01,True,False,False,wikipedia
+FHN,FHN,First Horizon Corp,Financials,,36966.0,2010-01-01,2013-06-23,3.48,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FI,FI,,,,,2023-06-07,2025-11-10,2.43,False,True,False,,False,False,False,
+FICO,FICO,Fair Isaac,Information Technology,Application Software,814547.0,2023-03-20,2025-12-31,2.79,True,False,True,2008-12-01,True,False,False,wikipedia
+FII,FII,,,,,2010-01-01,2013-01-01,3.0,False,True,False,,False,False,False,
+FIS,FIS,Fidelity National Information Services,Financials,Transaction & Payment Processing Services,1136893.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FISV,FISV,Fiserv,Financials,Transaction & Payment Processing Services,798354.0,2010-01-01,2025-12-31,13.57,True,False,True,2008-12-01,True,False,False,wikipedia
+FITB,FITB,Fifth Third Bancorp,Financials,Regional Banks,35527.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+FIX,FIX,Comfort Systems USA,Industrials,Construction & Engineering,1035983.0,2025-12-22,2025-12-31,0.03,True,False,True,2008-12-01,True,False,False,wikipedia
+FL,FL,,,,,2016-04-04,2019-08-08,3.35,False,True,False,,False,False,False,
+FLIR,FLIR,,,,,2010-01-01,2021-05-13,11.36,False,True,False,,False,False,False,
+FLR,FLR,Fluor Corp,Industrials,,1124198.0,2010-01-01,2019-06-02,9.42,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FLS,FLS,Flowserve Corp,Industrials,,30625.0,2010-01-01,2021-03-21,11.22,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FLT,FLT,,,,,2018-06-20,2024-03-24,5.76,False,True,False,,False,False,False,
+FMC,FMC,Fmc Corp,Materials,,37785.0,2010-01-01,2025-03-23,15.23,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FOSL,FOSL,"Fossil Group, Inc.",Consumer Discretionary,,883569.0,2012-04-04,2016-01-04,3.75,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FOX,FOX,Fox Corporation (Class B),Communication Services,Broadcasting,1754301.0,2015-09-21,2025-12-31,10.28,True,False,True,2019-03-13,True,True,False,wikipedia
+FOXA,FOXA,Fox Corporation (Class A),Communication Services,Broadcasting,1754301.0,2010-01-01,2025-12-31,16.0,True,False,True,2019-03-12,True,False,False,wikipedia
+FRC,FRC,,,,,2019-01-02,2023-05-03,4.33,False,True,False,,False,False,False,
+FRT,FRT,Federal Realty Investment Trust,Real Estate,Retail REITs,34903.0,2016-02-01,2025-12-31,9.92,True,False,True,2008-12-01,True,False,False,wikipedia
+FRX,FRX,,,,,2010-01-01,2014-06-30,4.5,False,True,False,,False,False,False,
+FSLR,FSLR,First Solar,Information Technology,Semiconductors,1274494.0,2010-01-01,2025-12-31,10.25,True,False,True,2008-12-01,True,False,False,wikipedia
+FTI,FTI,Technipfmc Plc,Energy,,1681459.0,2010-01-01,2021-02-11,11.12,False,True,True,2008-12-01,True,False,False,sec+yahoo
+FTNT,FTNT,Fortinet,Information Technology,Systems Software,1262039.0,2018-10-11,2025-12-31,7.23,True,False,True,2009-11-18,True,False,False,wikipedia
+FTR,FTR,,,,,2010-01-01,2017-03-19,7.21,False,True,False,,False,False,False,
+FTV,FTV,Fortive,Industrials,Industrial Machinery & Supplies & Components,1659166.0,2016-07-05,2025-12-31,9.49,True,False,True,2016-07-05,True,False,False,wikipedia
+GAS,GAS,,,,,2010-01-01,2016-06-30,6.49,False,True,False,,False,False,False,
+GD,GD,General Dynamics,Industrials,Aerospace & Defense,40533.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GDDY,GDDY,GoDaddy,Information Technology,Internet Services & Infrastructure,1609711.0,2024-06-24,2025-12-31,1.52,True,False,True,2015-03-31,True,False,False,wikipedia
+GE,GE,GE Aerospace,Industrials,Aerospace & Defense,40545.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GEHC,GEHC,GE HealthCare,Health Care,Health Care Equipment,1932393.0,2023-01-04,2025-12-31,2.99,True,False,True,2022-12-15,True,False,False,wikipedia
+GEN,GEN,Gen Digital,Information Technology,Systems Software,849399.0,2022-11-08,2025-12-31,3.15,True,False,True,2008-12-01,True,False,False,wikipedia
+GENZ,GENZ,,,,,2010-01-01,2011-04-03,1.25,False,True,False,2008-12-01,False,False,True,
+GEV,GEV,GE Vernova,Industrials,Heavy Electrical Equipment,1996810.0,2024-04-02,2025-12-31,1.75,True,False,True,2024-03-27,True,False,False,wikipedia
+GGP,GGP,,,,,2013-12-10,2018-08-27,4.71,False,True,False,,False,False,False,
+GHC,GHC,Graham Holdings Co,Industrials,,104889.0,2010-01-01,2014-09-21,4.72,False,True,True,2008-12-01,True,False,False,sec+yahoo
+GILD,GILD,Gilead Sciences,Health Care,Biotechnology,882095.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GIS,GIS,General Mills,Consumer Staples,Packaged Foods & Meats,40704.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GL,GL,Globe Life,Financials,Life & Health Insurance,320335.0,2019-08-08,2025-12-31,6.4,True,False,True,2008-12-01,True,False,False,wikipedia
+GLW,GLW,Corning Inc.,Information Technology,Electronic Components,24741.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GM,GM,General Motors,Consumer Discretionary,Automobile Manufacturers,1467858.0,2013-06-07,2025-12-31,12.57,True,False,True,2010-11-18,True,False,False,wikipedia
+GMCR,GMCR,,,,,2014-03-24,2016-03-02,1.94,False,True,False,,False,False,False,
+GME,GME,Gamestop Corp.,Consumer Discretionary,,1326380.0,2010-01-01,2016-04-24,6.31,False,True,True,2008-12-01,True,False,False,sec+yahoo
+GNRC,GNRC,Generac,Industrials,Heavy Electrical Equipment,1474735.0,2021-03-22,2025-12-31,4.78,True,False,True,2010-02-11,True,False,False,wikipedia
+GNW,GNW,Genworth Financial Inc,Financials,,1276520.0,2010-01-01,2015-11-17,5.88,False,True,True,2008-12-01,True,False,False,sec+yahoo
+GOOG,GOOG,Alphabet Inc. (Class C),Communication Services,Interactive Media & Services,1652044.0,2014-04-03,2025-12-31,11.75,True,False,True,2008-12-01,True,True,False,wikipedia
+GOOGL,GOOGL,Alphabet Inc. (Class A),Communication Services,Interactive Media & Services,1652044.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GPC,GPC,Genuine Parts Company,Consumer Discretionary,Distributors,40987.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GPN,GPN,Global Payments,Financials,Transaction & Payment Processing Services,1123360.0,2016-04-25,2025-12-31,9.69,True,False,True,2008-12-01,True,False,False,wikipedia
+GPS,GPS,,,,,2010-01-01,2022-02-01,12.09,False,True,False,,False,False,False,
+GR,GR,,,,,2010-01-01,2012-07-26,2.57,False,True,False,,False,False,False,
+GRMN,GRMN,Garmin,Consumer Discretionary,Consumer Electronics,1121788.0,2012-12-12,2025-12-31,13.05,True,False,True,2008-12-01,True,False,False,wikipedia
+GS,GS,Goldman Sachs,Financials,Investment Banking & Brokerage,886982.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+GT,GT,Goodyear Tire & Rubber Co /Oh/,Consumer Discretionary,,42582.0,2010-01-01,2019-02-26,9.16,False,True,True,2008-12-01,True,False,False,sec+yahoo
+GWW,GWW,W. W. Grainger,Industrials,Industrial Machinery & Supplies & Components,277135.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HAL,HAL,Halliburton,Energy,Oil & Gas Equipment & Services,45012.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HAR,HAR,,,,,2010-01-01,2017-03-12,7.2,False,True,False,,False,False,False,
+HAS,HAS,Hasbro,Consumer Discretionary,Leisure Products,46080.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HBAN,HBAN,Huntington Bancshares,Financials,Regional Banks,49196.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HBI,HBI,,,,,2015-03-23,2021-12-19,6.75,False,True,False,,False,False,False,
+HCA,HCA,HCA Healthcare,Health Care,Health Care Facilities,860730.0,2015-01-27,2025-12-31,10.93,True,False,True,2011-03-10,True,False,False,wikipedia
+HCBK,HCBK,,,,,2010-01-01,2015-11-01,5.83,False,True,False,,False,False,False,
+HCP,HCP,,,,,2010-01-01,2019-11-04,9.84,False,True,False,,False,False,False,
+HD,HD,Home Depot (The),Consumer Discretionary,Home Improvement Retail,354950.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HES,HES,,,,,2010-01-01,2025-07-22,15.56,False,True,False,,False,False,False,
+HFC,HFC,,,,,2018-06-18,2021-06-03,2.96,False,True,False,,False,False,False,
+HIG,HIG,Hartford (The),Financials,Property & Casualty Insurance,874766.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HII,HII,Huntington Ingalls Industries,Industrials,Aerospace & Defense,1501585.0,2018-01-03,2025-12-31,7.99,True,False,True,2011-03-22,True,False,False,wikipedia
+HLT,HLT,Hilton Worldwide,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1585689.0,2017-06-19,2025-12-31,8.54,True,False,True,2013-12-12,True,False,False,wikipedia
+HNZ,HNZ,,,,,2010-01-01,2013-06-06,3.43,False,True,False,,False,False,False,
+HOG,HOG,"Harley-Davidson, Inc.",Consumer Discretionary,,793952.0,2010-01-01,2020-06-21,10.47,False,True,True,2008-12-01,True,False,False,sec+yahoo
+HOLX,HOLX,,,,,2016-03-30,2025-12-31,9.76,True,False,False,,False,False,False,
+HON,HON,Honeywell Technologies,Industrials,Industrial Conglomerates,773840.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HOOD,HOOD,Robinhood Markets,Financials,Investment Banking & Brokerage,1783879.0,2025-09-22,2025-12-31,0.28,True,False,True,2021-07-29,True,False,False,wikipedia
+HOT,HOT,,,,,2010-01-01,2016-09-22,6.73,False,True,False,,False,False,False,
+HP,HP,"Helmerich & Payne, Inc.",Energy,,46765.0,2010-03-01,2020-05-21,10.23,False,True,True,2008-12-01,True,False,False,sec+yahoo
+HPE,HPE,Hewlett Packard Enterprise,Information Technology,"Technology Hardware, Storage & Peripherals",1645590.0,2015-11-02,2025-12-31,10.17,True,False,True,2015-10-19,True,False,False,wikipedia
+HPQ,HPQ,HP Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",47217.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HRB,HRB,H&R Block Inc,Consumer Discretionary,,12659.0,2010-01-01,2020-09-20,10.72,False,True,True,2008-12-01,True,False,False,sec+yahoo
+HRL,HRL,Hormel Foods,Consumer Staples,Packaged Foods & Meats,48465.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HRS,HRS,,,,,2010-01-01,2019-05-31,9.41,False,True,False,,False,False,False,
+HSH,HSH,,,,,2010-01-01,2012-06-28,2.49,False,True,False,,False,False,False,
+HSIC,HSIC,Henry Schein,Health Care,Health Care Distributors,1000228.0,2015-03-18,2025-12-31,10.79,True,False,True,2008-12-01,True,False,False,wikipedia
+HSP,HSP,,,,,2010-01-01,2015-09-02,5.67,False,True,False,,False,False,False,
+HST,HST,Host Hotels & Resorts,Real Estate,Hotel & Resort REITs,1070750.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HSY,HSY,Hershey Company (The),Consumer Staples,Packaged Foods & Meats,47111.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HUBB,HUBB,Hubbell Incorporated,Industrials,Industrial Machinery & Supplies & Components,48898.0,2023-10-18,2025-12-31,2.21,True,False,True,2008-12-01,True,False,False,wikipedia
+HUM,HUM,Humana,Health Care,Managed Health Care,49071.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+HWM,HWM,Howmet Aerospace,Industrials,Aerospace & Defense,4281.0,2020-04-06,2025-12-31,5.74,True,False,True,2016-11-01,True,False,False,wikipedia
+IBKR,IBKR,Interactive Brokers,Financials,Investment Banking & Brokerage,1381197.0,2025-08-28,2025-12-31,0.34,True,False,True,2008-12-01,True,False,False,wikipedia
+IBM,IBM,IBM,Information Technology,IT Consulting & Other Services,51143.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ICE,ICE,Intercontinental Exchange,Financials,Financial Exchanges & Data,1571949.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+IDXX,IDXX,Idexx Laboratories,Health Care,Health Care Equipment,874716.0,2017-01-05,2025-12-31,8.99,True,False,True,2008-12-01,True,False,False,wikipedia
+IEX,IEX,IDEX Corporation,Industrials,Industrial Machinery & Supplies & Components,832101.0,2019-08-09,2025-12-31,6.4,True,False,True,2008-12-01,True,False,False,wikipedia
+IFF,IFF,International Flavors & Fragrances,Materials,Specialty Chemicals,51253.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+IGT,IGT,,,,,2010-01-01,2014-06-19,4.47,False,True,False,,False,False,False,
+ILMN,ILMN,"Illumina, Inc.",Health Care,Life Sciences Tools & Services,1110803.0,2015-11-19,2024-06-23,8.6,False,True,True,2008-12-01,True,False,False,wikipedia
+INCY,INCY,Incyte,Health Care,Biotechnology,879169.0,2017-02-28,2025-12-31,8.84,True,False,True,2008-12-01,True,False,False,wikipedia
+INFO,INFO,,,,,2017-06-02,2022-03-01,4.75,False,True,False,2024-10-10,False,False,True,
+INTC,INTC,Intel,Information Technology,Semiconductors,50863.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+INTU,INTU,Intuit,Information Technology,Application Software,896878.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+INVH,INVH,Invitation Homes,Real Estate,Single-Family Residential REITs,1687229.0,2022-09-19,2025-12-31,3.29,True,False,True,2017-02-01,True,False,False,wikipedia
+IP,IP,International Paper,Materials,Paper & Plastic Packaging Products & Materials,51434.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+IPG,IPG,,,,,2010-01-01,2025-11-27,15.91,False,True,False,,False,False,False,
+IPGP,IPGP,Ipg Photonics Corp,Information Technology,,1111928.0,2018-03-07,2022-06-20,4.29,False,True,True,2008-12-01,True,False,False,sec+yahoo
+IQV,IQV,IQVIA,Health Care,Life Sciences Tools & Services,1478242.0,2017-08-29,2025-12-31,8.34,True,False,True,2013-05-09,True,False,False,wikipedia
+IR,IR,Ingersoll Rand,Industrials,Industrial Machinery & Supplies & Components,1699150.0,2010-11-17,2025-12-31,15.12,True,False,True,2017-05-12,True,False,False,wikipedia
+IRM,IRM,Iron Mountain,Real Estate,Other Specialized REITs,1020569.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ISRG,ISRG,Intuitive Surgical,Health Care,Health Care Equipment,1035267.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+IT,IT,Gartner,Information Technology,IT Consulting & Other Services,749251.0,2017-04-05,2025-12-31,8.74,True,False,True,2008-12-01,True,False,False,wikipedia
+ITT,ITT,Itt Inc.,Industrials,,216228.0,2010-01-01,2011-10-31,1.83,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ITW,ITW,Illinois Tool Works,Industrials,Industrial Machinery & Supplies & Components,49826.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+IVZ,IVZ,Invesco,Financials,Asset Management & Custody Banks,914208.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+J,J,Jacobs Solutions,Industrials,Construction & Engineering,52988.0,2019-12-10,2025-12-31,6.06,True,False,True,2008-12-01,True,False,False,wikipedia
+JAVA,JAVA,,,,,2010-01-01,2010-01-26,0.07,False,True,False,2021-10-05,False,False,True,
+JBHT,JBHT,J.B. Hunt,Industrials,Cargo Ground Transportation,728535.0,2015-07-01,2025-12-31,10.51,True,False,True,2008-12-01,True,False,False,wikipedia
+JBL,JBL,Jabil,Information Technology,Electronic Manufacturing Services,898293.0,2010-01-01,2025-12-31,6.88,True,False,True,2008-12-01,True,False,False,wikipedia
+JCI,JCI,Johnson Controls,Industrials,Building Products,833444.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+JCP,JCP,,,,,2010-01-01,2013-12-01,3.92,False,True,False,,False,False,False,
+JEC,JEC,,,,,2010-01-01,2019-12-09,9.94,False,True,False,,False,False,False,
+JEF,JEF,Jefferies Financial Group Inc.,Financials,,96223.0,2010-01-01,2019-09-25,9.73,False,True,True,2008-12-01,True,False,False,sec+yahoo
+JKHY,JKHY,Jack Henry & Associates,Financials,Transaction & Payment Processing Services,779152.0,2018-11-13,2025-12-31,7.13,True,False,True,2008-12-01,True,False,False,wikipedia
+JNJ,JNJ,Johnson & Johnson,Health Care,Pharmaceuticals,200406.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+JNPR,JNPR,,,,,2010-01-01,2025-07-08,15.52,False,True,False,,False,False,False,
+JNS,JNS,,,,,2010-01-01,2011-11-22,1.89,False,True,False,,False,False,False,
+JOY,JOY,,,,,2011-02-28,2015-10-07,4.61,False,True,False,,False,False,False,
+JPM,JPM,JPMorgan Chase,Financials,Diversified Banks,19617.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+JWN,JWN,,,,,2010-01-01,2020-06-21,10.47,False,True,False,,False,False,False,
+K,K,,,,,2010-01-01,2025-12-10,15.94,False,True,False,,False,False,False,
+KDP,KDP,Keurig Dr Pepper,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,1418135.0,2010-01-01,2025-12-31,12.03,True,False,True,2008-12-01,True,False,False,wikipedia
+KEY,KEY,KeyCorp,Financials,Regional Banks,91576.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KEYS,KEYS,Keysight Technologies,Information Technology,Electronic Equipment & Instruments,1601046.0,2018-11-06,2025-12-31,7.15,True,False,True,2014-10-20,True,False,False,wikipedia
+KG,KG,Kestrel Group Ltd,,,2055116.0,2010-01-01,2010-12-19,0.97,False,True,False,2008-12-01,False,False,True,sec
+KHC,KHC,Kraft Heinz,Consumer Staples,Packaged Foods & Meats,1637459.0,2015-07-06,2025-12-31,10.49,True,False,True,2015-07-06,True,False,False,wikipedia
+KIM,KIM,Kimco Realty,Real Estate,Retail REITs,879101.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KKR,KKR,KKR & Co.,Financials,Asset Management & Custody Banks,1404912.0,2024-06-24,2025-12-31,1.52,True,False,True,2010-07-15,True,False,False,wikipedia
+KLAC,KLAC,KLA Corporation,Information Technology,Semiconductor Materials & Equipment,319201.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KMB,KMB,Kimberly-Clark,Consumer Staples,Household Products,55785.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KMI,KMI,Kinder Morgan,Energy,Oil & Gas Storage & Transportation,1506307.0,2012-05-25,2025-12-31,13.6,True,False,True,2011-02-11,True,False,False,wikipedia
+KMX,KMX,Carmax Inc,Consumer Discretionary,,1170010.0,2010-06-28,2025-10-30,15.34,False,True,True,2008-12-01,True,False,False,sec+yahoo
+KO,KO,Coca-Cola Company (The),Consumer Staples,Soft Drinks & Non-alcoholic Beverages,21344.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KORS,KORS,,,,,2013-11-13,2018-09-18,4.85,False,True,False,,False,False,False,
+KR,KR,Kroger,Consumer Staples,Food Retail,56873.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+KRFT,KRFT,,,,,2012-10-02,2015-07-05,2.76,False,True,False,,False,False,False,
+KSS,KSS,Kohls Corp,Consumer Discretionary,,885639.0,2010-01-01,2020-09-20,10.72,False,True,True,2008-12-01,True,False,False,sec+yahoo
+KSU,KSU,,,,,2013-05-24,2021-12-13,8.56,False,True,False,,False,False,False,
+KVUE,KVUE,Kenvue,Consumer Staples,Personal Care Products,1944048.0,2023-08-25,2025-12-31,2.35,True,False,True,2023-05-04,True,False,False,wikipedia
+L,L,Loews Corporation,Financials,Multi-line Insurance,60086.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LB,LB,Landbridge Co Llc,,,1995807.0,2010-01-01,2021-08-02,11.59,False,True,False,2024-06-28,False,False,True,sec
+LDOS,LDOS,Leidos,Industrials,Diversified Support Services,1336920.0,2010-01-01,2025-12-31,10.12,True,False,True,2008-12-01,True,False,False,wikipedia
+LEG,LEG,,,,,2010-01-01,2021-12-19,11.97,False,True,False,,False,False,False,
+LEN,LEN,Lennar,Consumer Discretionary,Homebuilding,920760.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LH,LH,Labcorp,Health Care,Health Care Services,920148.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LHX,LHX,L3Harris,Industrials,Aerospace & Defense,202058.0,2019-06-01,2025-12-31,6.59,True,False,True,2008-12-01,True,False,False,wikipedia
+LIFE,LIFE,Ethos Technologies Inc.,,,1788451.0,2010-01-01,2014-01-23,4.06,False,True,False,,False,False,False,sec
+LII,LII,Lennox International,Industrials,Building Products,1069202.0,2024-12-23,2025-12-31,1.02,True,False,True,2008-12-01,True,False,False,wikipedia
+LIN,LIN,Linde plc,Materials,Industrial Gases,1707925.0,2018-11-06,2025-12-31,7.15,True,False,True,2008-12-01,True,False,False,wikipedia
+LKQ,LKQ,Lkq Corp,Consumer Discretionary,,1065696.0,2016-05-23,2025-12-21,9.58,False,True,True,2008-12-01,True,False,False,sec+yahoo
+LLL,LLL,,,,,2010-01-01,2019-06-30,9.49,False,True,False,,False,False,False,
+LLTC,LLTC,,,,,2010-01-01,2017-03-12,7.2,False,True,False,,False,False,False,
+LLY,LLY,Lilly (Eli),Health Care,Pharmaceuticals,59478.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LM,LM,,,,,2010-01-01,2016-12-01,6.92,False,True,False,,False,False,False,
+LMT,LMT,Lockheed Martin,Industrials,Aerospace & Defense,936468.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LNC,LNC,Lincoln National Corp,Financials,,59558.0,2010-01-01,2023-09-17,13.71,False,True,True,2008-12-01,True,False,False,sec+yahoo
+LNT,LNT,Alliant Energy,Utilities,Electric Utilities,352541.0,2016-07-01,2025-12-31,9.5,True,False,True,2008-12-01,True,False,False,wikipedia
+LO,LO,,,,,2010-01-01,2015-06-11,5.44,False,True,False,,False,False,False,
+LOW,LOW,Lowe's,Consumer Discretionary,Home Improvement Retail,60667.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LRCX,LRCX,Lam Research,Information Technology,Semiconductor Materials & Equipment,707549.0,2012-06-05,2025-12-31,13.57,True,False,True,2008-12-01,True,False,False,wikipedia
+LSI,LSI,,,,,2010-01-01,2014-05-06,4.34,False,True,False,,False,False,False,
+LULU,LULU,Lululemon Athletica,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",1397187.0,2023-10-18,2025-12-31,2.21,True,False,True,2008-12-01,True,False,False,wikipedia
+LUMN,LUMN,"Lumen Technologies, Inc.",Communication Services,,18926.0,2020-09-18,2023-03-19,2.5,False,True,True,2008-12-01,True,False,False,sec+yahoo
+LUV,LUV,Southwest Airlines,Industrials,Passenger Airlines,92380.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+LVLT,LVLT,,,,,2014-11-05,2017-10-12,2.94,False,True,False,,False,False,False,
+LVS,LVS,Las Vegas Sands,Consumer Discretionary,Casinos & Gaming,1300514.0,2019-10-03,2025-12-31,6.25,True,False,True,2008-12-01,True,False,False,wikipedia
+LW,LW,"Lamb Weston Holdings, Inc.",Consumer Staples,,1679273.0,2018-12-03,2025-12-31,7.08,True,False,True,2016-11-10,True,False,False,sec+yahoo
+LXK,LXK,,,,,2010-01-01,2012-09-30,2.75,False,True,False,,False,False,False,
+LYB,LYB,LyondellBasell,Materials,Specialty Chemicals,1489393.0,2012-09-05,2025-12-31,13.32,True,False,True,2010-04-28,True,False,False,wikipedia
+LYV,LYV,Live Nation Entertainment,Communication Services,Movies & Entertainment,1335258.0,2019-12-23,2025-12-31,6.03,True,False,True,2008-12-01,True,False,False,wikipedia
+M,M,"Macy'S, Inc.",Consumer Discretionary,,794367.0,2010-01-01,2020-04-05,10.26,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MA,MA,Mastercard,Financials,Transaction & Payment Processing Services,1141391.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MAA,MAA,Mid-America Apartment Communities,Real Estate,Multi-Family Residential REITs,912595.0,2016-12-02,2025-12-31,9.08,True,False,True,2008-12-01,True,False,False,wikipedia
+MAC,MAC,Macerich Co,Real Estate,,912242.0,2013-05-09,2019-12-22,6.62,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MAR,MAR,Marriott International,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1048286.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MAS,MAS,Masco,Industrials,Building Products,62996.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MAT,MAT,Mattel Inc /De/,Consumer Discretionary,,63276.0,2010-01-01,2019-06-06,9.43,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MCD,MCD,McDonald's,Consumer Discretionary,Restaurants,63908.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MCHP,MCHP,Microchip Technology,Information Technology,Semiconductors,827054.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MCK,MCK,McKesson Corporation,Health Care,Health Care Distributors,927653.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MCO,MCO,Moody's Corporation,Financials,Financial Exchanges & Data,1059556.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MDLZ,MDLZ,Mondelez International,Consumer Staples,Packaged Foods & Meats,1103982.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MDP,MDP,,,,,2010-01-01,2011-01-03,1.01,False,True,False,,False,False,False,
+MDT,MDT,Medtronic,Health Care,Health Care Equipment,1613103.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MEE,MEE,,,,,2010-01-01,2011-06-01,1.42,False,True,False,,False,False,False,
+MET,MET,MetLife,Financials,Life & Health Insurance,1099219.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+META,META,Meta Platforms,Communication Services,Interactive Media & Services,1326801.0,2022-06-09,2025-12-31,3.56,True,False,True,2012-05-18,True,False,False,wikipedia
+MFE,MFE,,,,,2010-01-01,2011-02-28,1.16,False,True,False,,False,False,False,
+MGM,MGM,MGM Resorts,Consumer Discretionary,Casinos & Gaming,789570.0,2017-07-26,2025-12-31,8.44,True,False,True,2008-12-01,True,False,False,wikipedia
+MHK,MHK,Mohawk Industries Inc,Consumer Discretionary,,851968.0,2013-12-23,2025-12-21,12.0,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MHS,MHS,,,,,2010-01-01,2012-04-01,2.25,False,True,False,,False,False,False,
+MI,MI,Nft Ltd,,,1958713.0,2010-01-01,2011-07-05,1.51,False,True,False,2015-11-25,False,False,True,sec
+MIL,MIL,,,,,2010-01-01,2010-07-14,0.53,False,True,False,,False,False,False,
+MJN,MJN,,,,,2010-01-01,2017-06-14,7.45,False,True,False,,False,False,False,
+MKC,MKC,McCormick & Company,Consumer Staples,Packaged Foods & Meats,63754.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MKTX,MKTX,Marketaxess Holdings Inc,Financials,,1278021.0,2019-07-01,2025-09-21,6.23,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MLM,MLM,Martin Marietta Materials,Materials,Construction Materials,916076.0,2014-07-02,2025-12-31,11.5,True,False,True,2008-12-01,True,False,False,wikipedia
+MMC,MMC,,,,,2010-01-01,2025-12-31,16.0,True,False,False,,False,False,False,
+MMI,MMI,"Marcus & Millichap, Inc.",,,1578732.0,2011-01-04,2012-05-21,1.38,False,True,False,2013-10-31,False,False,True,sec
+MMM,MMM,3M,Industrials,Industrial Conglomerates,66740.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MNK,MNK,,,,,2014-08-19,2017-07-25,2.93,False,True,False,,False,False,False,
+MNST,MNST,Monster Beverage,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,865752.0,2012-06-29,2025-12-31,13.51,True,False,True,2008-12-01,True,False,False,wikipedia
+MO,MO,Altria,Consumer Staples,Tobacco,764180.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MOH,MOH,"Molina Healthcare, Inc.",Health Care,,1179929.0,2022-03-02,2025-12-31,3.84,True,False,True,2008-12-01,True,False,False,sec+yahoo
+MOLX,MOLX,,,,,2010-01-01,2013-12-08,3.94,False,True,False,,False,False,False,
+MON,MON,,,,,2010-01-01,2018-06-06,8.43,False,True,False,,False,False,False,
+MOS,MOS,Mosaic Company (The),Materials,Fertilizers & Agricultural Chemicals,1285785.0,2011-09-26,2025-12-31,14.27,True,False,True,2008-12-01,True,False,False,wikipedia
+MPC,MPC,Marathon Petroleum,Energy,Oil & Gas Refining & Marketing,1510295.0,2011-07-01,2025-12-31,14.51,True,False,True,2011-06-24,True,False,False,wikipedia
+MPWR,MPWR,Monolithic Power Systems,Information Technology,Semiconductors,1280452.0,2021-02-12,2025-12-31,4.88,True,False,True,2008-12-01,True,False,False,wikipedia
+MRK,MRK,Merck & Co.,Health Care,Pharmaceuticals,310158.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MRNA,MRNA,Moderna,Health Care,Biotechnology,1682852.0,2021-07-21,2025-12-31,4.45,True,False,True,2018-12-07,True,False,False,wikipedia
+MRO,MRO,,,,,2010-01-01,2024-11-25,14.9,False,True,False,,False,False,False,
+MS,MS,Morgan Stanley,Financials,Investment Banking & Brokerage,895421.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MSCI,MSCI,MSCI,Financials,Financial Exchanges & Data,1408198.0,2018-04-04,2025-12-31,7.75,True,False,True,2008-12-01,True,False,False,wikipedia
+MSFT,MSFT,Microsoft,Information Technology,Systems Software,789019.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MSI,MSI,Motorola Solutions,Information Technology,Communications Equipment,68505.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MTB,MTB,M&T Bank,Financials,Regional Banks,36270.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MTCH,MTCH,"Match Group, Inc.",Communication Services,,891103.0,2021-09-20,2025-12-31,4.28,True,False,True,2008-12-01,True,False,False,sec+yahoo
+MTD,MTD,Mettler Toledo,Health Care,Life Sciences Tools & Services,1037646.0,2016-09-06,2025-12-31,9.32,True,False,True,2008-12-01,True,False,False,wikipedia
+MU,MU,Micron Technology,Information Technology,Semiconductors,723125.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+MUR,MUR,Murphy Oil Corp,Energy,,717423.0,2010-01-01,2017-07-25,7.56,False,True,True,2008-12-01,True,False,False,sec+yahoo
+MWV,MWV,,,,,2010-01-01,2015-07-01,5.5,False,True,False,,False,False,False,
+MWW,MWW,,,,,2010-01-01,2011-12-18,1.96,False,True,False,,False,False,False,
+MXIM,MXIM,,,,,2018-12-03,2021-08-29,2.74,False,True,False,,False,False,False,
+MYL,MYL,,,,,2010-01-01,2020-11-16,10.88,False,True,False,,False,False,False,
+NAVI,NAVI,Navient Corp,Financials,,1593538.0,2014-05-01,2018-06-04,4.1,False,True,True,2014-04-17,True,False,False,sec+yahoo
+NBL,NBL,,,,,2010-01-01,2020-10-11,10.78,False,True,False,,False,False,False,
+NBR,NBR,Nabors Industries Ltd,Energy,,1163739.0,2010-01-01,2015-03-22,5.22,False,True,True,2008-12-01,True,False,False,sec+yahoo
+NCLH,NCLH,Norwegian Cruise Line Holdings,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",1513761.0,2017-10-13,2025-12-31,8.22,True,False,True,2013-01-18,True,False,False,wikipedia
+NDAQ,NDAQ,"Nasdaq, Inc.",Financials,Financial Exchanges & Data,1120193.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NDSN,NDSN,Nordson Corporation,Industrials,Industrial Machinery & Supplies & Components,72331.0,2022-02-15,2025-12-31,3.88,True,False,True,2008-12-01,True,False,False,wikipedia
+NE,NE,Noble Corp Plc,,,1895262.0,2011-01-18,2015-07-19,4.5,False,True,False,2021-06-09,False,False,True,sec
+NEE,NEE,NextEra Energy,Utilities,Multi-Utilities,753308.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NEM,NEM,Newmont,Materials,Gold,1164727.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NFLX,NFLX,Netflix,Communication Services,Movies & Entertainment,1065280.0,2010-12-20,2025-12-31,15.03,True,False,True,2008-12-01,True,False,False,wikipedia
+NFX,NFX,,,,,2010-12-20,2019-02-14,8.16,False,True,False,,False,False,False,
+NI,NI,NiSource,Utilities,Multi-Utilities,1111711.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NKE,NKE,"Nike, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods",320187.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NKTR,NKTR,Nektar Therapeutics,Health Care,,906709.0,2018-03-19,2019-10-02,1.54,False,True,True,2008-12-01,True,False,False,sec+yahoo
+NLOK,NLOK,,,,,2019-11-05,2022-11-07,3.01,False,True,False,,False,False,False,
+NLSN,NLSN,,,,,2013-07-09,2022-10-11,9.26,False,True,False,,False,False,False,
+NOC,NOC,Northrop Grumman,Industrials,Aerospace & Defense,1133421.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NOV,NOV,Nov Inc.,Energy,,1021860.0,2010-01-01,2021-09-19,11.72,False,True,True,2008-12-01,True,False,False,sec+yahoo
+NOVL,NOVL,,,,,2010-01-01,2011-04-27,1.32,False,True,False,,False,False,False,
+NOW,NOW,ServiceNow,Information Technology,Systems Software,1373715.0,2019-11-21,2025-12-31,6.11,True,False,True,2012-06-29,True,False,False,wikipedia
+NRG,NRG,NRG Energy,Utilities,Independent Power Producers & Energy Traders,1013871.0,2010-01-29,2025-12-31,15.92,True,False,True,2008-12-01,True,False,False,wikipedia
+NSC,NSC,Norfolk Southern,Industrials,Rail Transportation,702165.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NSM,NSM,,,,,2010-01-01,2011-09-25,1.73,False,True,False,,False,False,False,
+NTAP,NTAP,NetApp,Information Technology,"Technology Hardware, Storage & Peripherals",1002047.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NTRS,NTRS,Northern Trust,Financials,Asset Management & Custody Banks,73124.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NUE,NUE,Nucor,Materials,Steel,73309.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NVDA,NVDA,Nvidia,Information Technology,Semiconductors,1045810.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+NVLS,NVLS,,,,,2010-01-01,2012-06-04,2.43,False,True,False,,False,False,False,
+NVR,NVR,"NVR, Inc.",Consumer Discretionary,Homebuilding,906163.0,2019-09-26,2025-12-31,6.27,True,False,True,2008-12-01,True,False,False,wikipedia
+NWL,NWL,Newell Brands Inc.,Consumer Staples,,814453.0,2010-01-01,2023-09-17,13.71,False,True,True,2008-12-01,True,False,False,sec+yahoo
+NWS,NWS,News Corp (Class B),Communication Services,Publishing,1564708.0,2015-09-21,2025-12-31,10.28,True,False,True,2013-06-19,True,True,False,wikipedia
+NWSA,NWSA,News Corp (Class A),Communication Services,Publishing,1564708.0,2013-07-01,2025-12-31,12.5,True,False,True,2013-06-19,True,False,False,wikipedia
+NXPI,NXPI,NXP Semiconductors,Information Technology,Semiconductors,1413447.0,2021-03-22,2025-12-31,4.78,True,False,True,2010-08-06,True,False,False,wikipedia
+NYT,NYT,New York Times Co,Communication Services,,71691.0,2010-01-01,2010-12-19,0.97,False,True,True,2008-12-01,True,False,False,sec+yahoo
+NYX,NYX,,,,,2010-01-01,2013-11-12,3.87,False,True,False,,False,False,False,
+O,O,Realty Income,Real Estate,Retail REITs,726728.0,2015-04-07,2025-12-31,10.74,True,False,True,2008-12-01,True,False,False,wikipedia
+ODFL,ODFL,Old Dominion,Industrials,Cargo Ground Transportation,878927.0,2019-12-09,2025-12-31,6.06,True,False,True,2008-12-01,True,False,False,wikipedia
+ODP,ODP,,,,,2010-01-01,2010-12-19,0.97,False,True,False,,False,False,False,
+OGN,OGN,Organon & Co.,Health Care,,1821825.0,2021-06-04,2023-10-17,2.37,False,True,True,2021-05-14,True,False,False,sec+yahoo
+OI,OI,"O-I Glass, Inc. /De/",Consumer Discretionary,,812074.0,2010-01-01,2016-12-01,6.92,False,True,True,2008-12-01,True,False,False,sec+yahoo
+OKE,OKE,Oneok,Energy,Oil & Gas Storage & Transportation,1039684.0,2010-03-15,2025-12-31,15.8,True,False,True,2008-12-01,True,False,False,wikipedia
+OMC,OMC,Omnicom Group,Communication Services,Advertising,29989.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ON,ON,ON Semiconductor,Information Technology,Semiconductors,1097864.0,2022-06-21,2025-12-31,3.53,True,False,True,2008-12-01,True,False,False,wikipedia
+ORCL,ORCL,Oracle Corporation,Information Technology,Application Software,1341439.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ORLY,ORLY,O'Reilly Automotive,Consumer Discretionary,Automotive Retail,898173.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+OTIS,OTIS,Otis Worldwide,Industrials,Industrial Machinery & Supplies & Components,1781335.0,2020-04-03,2025-12-31,5.75,True,False,True,2020-03-19,True,False,False,wikipedia
+OXY,OXY,Occidental Petroleum,Energy,Oil & Gas Exploration & Production,797468.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PANW,PANW,Palo Alto Networks,Information Technology,Systems Software,1327567.0,2023-06-20,2025-12-31,2.54,True,False,True,2012-07-20,True,False,False,wikipedia
+PARA,PARA,"Banzai International, Inc.",,,1826011.0,2022-02-17,2025-08-07,3.47,False,True,False,2021-02-12,False,False,True,sec
+PAYC,PAYC,"Paycom Software, Inc.",Information Technology,,1590955.0,2020-01-28,2025-12-31,5.93,True,False,True,2014-04-15,True,False,False,sec+yahoo
+PAYX,PAYX,Paychex,Industrials,Human Resource & Employment Services,723531.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PBCT,PBCT,,,,,2010-01-01,2022-04-03,12.25,False,True,False,,False,False,False,
+PBG,PBG,,,,,2010-01-01,2010-02-28,0.16,False,True,False,,False,False,False,
+PBI,PBI,Pitney Bowes Inc /De/,Industrials,,78814.0,2010-01-01,2017-02-28,7.16,False,True,True,2008-12-01,True,False,False,sec+yahoo
+PCAR,PCAR,Paccar,Industrials,Construction Machinery & Heavy Transportation Equipment,75362.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PCG,PCG,PG&E Corporation,Utilities,Multi-Utilities,1004980.0,2010-01-01,2025-12-31,12.29,True,False,True,2008-12-01,True,False,False,wikipedia
+PCL,PCL,,,,,2010-01-01,2016-02-21,6.14,False,True,False,2025-08-05,False,False,True,
+PCP,PCP,,,,,2010-01-01,2016-01-31,6.08,False,True,False,,False,False,False,
+PDCO,PDCO,,,,,2010-01-01,2018-03-18,8.21,False,True,False,,False,False,False,
+PEAK,PEAK,,,,,2019-11-05,2024-03-03,4.33,False,True,False,,False,False,False,
+PEG,PEG,Public Service Enterprise Group,Utilities,Electric Utilities,788784.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PENN,PENN,"Penn Entertainment, Inc.",Consumer Discretionary,,921738.0,2021-03-22,2022-09-18,1.49,False,True,True,2008-12-01,True,False,False,sec+yahoo
+PEP,PEP,PepsiCo,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,77476.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PETM,PETM,,,,,2012-10-05,2015-03-11,2.43,False,True,False,,False,False,False,
+PFE,PFE,Pfizer,Health Care,Pharmaceuticals,78003.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PFG,PFG,Principal Financial Group,Financials,Life & Health Insurance,1126328.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PG,PG,Procter & Gamble,Consumer Staples,Personal Care Products,80424.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PGN,PGN,,,,,2010-01-01,2012-07-01,2.5,False,True,False,,False,False,False,
+PGR,PGR,Progressive Corporation,Financials,Property & Casualty Insurance,80661.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PH,PH,Parker Hannifin,Industrials,Industrial Machinery & Supplies & Components,76334.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PHM,PHM,PulteGroup,Consumer Discretionary,Homebuilding,822416.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PKG,PKG,Packaging Corporation of America,Materials,Paper & Plastic Packaging Products & Materials,75677.0,2017-07-26,2025-12-31,8.44,True,False,True,2008-12-01,True,False,False,wikipedia
+PKI,PKI,,,,,2010-01-01,2023-05-15,13.37,False,True,False,,False,False,False,
+PLD,PLD,Prologis,Real Estate,Industrial REITs,1045609.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PLL,PLL,,,,,2010-01-01,2015-08-30,5.66,False,True,False,,False,False,False,
+PLTR,PLTR,Palantir Technologies,Information Technology,Application Software,1321655.0,2024-09-23,2025-12-31,1.27,True,False,True,2020-09-30,True,False,False,wikipedia
+PM,PM,Philip Morris International,Consumer Staples,Tobacco,1413329.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PNC,PNC,PNC Financial Services,Financials,Diversified Banks,713676.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PNR,PNR,Pentair,Industrials,Industrial Machinery & Supplies & Components,77360.0,2012-10-01,2025-12-31,13.25,True,False,True,2008-12-01,True,False,False,wikipedia
+PNW,PNW,Pinnacle West Capital,Utilities,Multi-Utilities,764622.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PODD,PODD,Insulet Corporation,Health Care,Health Care Equipment,1145197.0,2023-03-15,2025-12-31,2.8,True,False,True,2008-12-01,True,False,False,wikipedia
+POM,POM,Pomdoctor Ltd,,,1877971.0,2010-01-01,2016-03-23,6.23,False,True,False,2025-10-08,False,False,True,sec
+POOL,POOL,Pool Corp,Industrials,,945841.0,2020-10-07,2025-12-31,5.23,True,False,True,2008-12-01,True,False,False,sec+yahoo
+PPG,PPG,PPG Industries,Materials,Specialty Chemicals,79879.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PPL,PPL,PPL Corporation,Utilities,Electric Utilities,922224.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PRGO,PRGO,Perrigo Co Plc,Health Care,,1585364.0,2011-12-19,2021-09-19,9.75,False,True,True,2008-12-01,True,False,False,sec+yahoo
+PRU,PRU,Prudential Financial,Financials,Life & Health Insurance,1137774.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PSA,PSA,Public Storage,Real Estate,Self-Storage REITs,1393311.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PSKY,PSKY,Skydance Corp,,,2041610.0,2025-08-08,2025-12-31,0.4,True,False,False,,False,False,False,sec
+PSX,PSX,Phillips 66,Energy,Oil & Gas Refining & Marketing,1534701.0,2012-05-01,2025-12-31,13.67,True,False,True,2012-04-12,True,False,False,wikipedia
+PTC,PTC,PTC Inc.,Information Technology,Application Software,857005.0,2021-04-20,2025-12-31,4.7,True,False,True,2008-12-01,True,False,False,wikipedia
+PTV,PTV,,,,,2010-01-01,2010-11-16,0.88,False,True,False,,False,False,False,
+PVH,PVH,Pvh Corp. /De/,Consumer Discretionary,,78239.0,2013-02-14,2022-09-18,9.59,False,True,True,2008-12-01,True,False,False,sec+yahoo
+PWR,PWR,Quanta Services,Industrials,Construction & Engineering,1050915.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+PX,PX,,,,,2010-01-01,2018-10-30,8.83,False,True,False,,False,False,False,
+PXD,PXD,,,,,2010-01-01,2024-05-07,14.35,False,True,False,,False,False,False,
+PYPL,PYPL,PayPal,Financials,Transaction & Payment Processing Services,1633917.0,2015-07-20,2025-12-31,10.45,True,False,True,2015-07-06,True,False,False,wikipedia
+Q,Q,Qnity Electronics,Information Technology,Semiconductor Materials & Equipment,2058873.0,2010-01-01,2025-12-31,1.41,True,False,True,2025-10-27,True,False,False,wikipedia
+QCOM,QCOM,Qualcomm,Information Technology,Semiconductors,804328.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+QEP,QEP,,,,,2010-07-01,2015-06-30,5.0,False,True,False,,False,False,False,
+QLGC,QLGC,,,,,2010-01-01,2011-01-17,1.05,False,True,False,,False,False,False,
+QRVO,QRVO,"Qorvo, Inc.",,,1604778.0,2015-06-12,2024-12-22,9.53,False,True,False,,False,False,False,sec
+R,R,Ryder System Inc,Industrials,,85961.0,2010-01-01,2017-06-18,7.46,False,True,True,2008-12-01,True,False,False,sec+yahoo
+RAI,RAI,,,,,2010-01-01,2017-07-24,7.56,False,True,False,,False,False,False,
+RCL,RCL,Royal Caribbean Group,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",884887.0,2014-12-05,2025-12-31,11.07,True,False,True,2008-12-01,True,False,False,wikipedia
+RDC,RDC,,,,,2010-01-01,2014-08-18,4.63,False,True,False,,False,False,False,
+RE,RE,,,,,2017-06-19,2023-07-09,6.06,False,True,False,,False,False,False,
+REG,REG,Regency Centers,Real Estate,Retail REITs,910606.0,2017-03-02,2025-12-31,8.84,True,False,True,2008-12-01,True,False,False,wikipedia
+REGN,REGN,Regeneron Pharmaceuticals,Health Care,Biotechnology,872589.0,2013-05-01,2025-12-31,12.67,True,False,True,2008-12-01,True,False,False,wikipedia
+RF,RF,Regions Financial Corporation,Financials,Regional Banks,1281761.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+RHI,RHI,Robert Half Inc.,Industrials,,315213.0,2010-01-01,2024-06-23,14.48,False,True,True,2008-12-01,True,False,False,sec+yahoo
+RHT,RHT,,,,,2010-01-01,2019-07-14,9.53,False,True,False,,False,False,False,
+RIG,RIG,Transocean Ltd.,Energy,,1451505.0,2013-10-29,2017-07-25,3.74,False,True,True,2008-12-01,True,False,False,sec+yahoo
+RJF,RJF,Raymond James Financial,Financials,Investment Banking & Brokerage,720005.0,2017-03-20,2025-12-31,8.79,True,False,True,2008-12-01,True,False,False,wikipedia
+RL,RL,Ralph Lauren Corporation,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",1037038.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+RMD,RMD,ResMed|,Health Care,Health Care Equipment,943819.0,2017-07-26,2025-12-31,8.44,True,False,True,2008-12-01,True,False,False,wikipedia
+ROK,ROK,Rockwell Automation,Industrials,Electrical Components & Equipment,1024478.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ROL,ROL,"Rollins, Inc.",Industrials,Environmental & Facilities Services,84839.0,2018-10-01,2025-12-31,7.25,True,False,True,2008-12-01,True,False,False,wikipedia
+ROP,ROP,Roper Technologies,Information Technology,Electronic Equipment & Instruments,882835.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ROST,ROST,Ross Stores,Consumer Discretionary,Apparel Retail,745732.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+RRC,RRC,Range Resources Corp,Energy,,315852.0,2010-01-01,2018-06-17,8.46,False,True,True,2008-12-01,True,False,False,sec+yahoo
+RRD,RRD,,,,,2010-01-01,2012-12-11,2.95,False,True,False,,False,False,False,
+RSG,RSG,Republic Services,Industrials,Environmental & Facilities Services,1060391.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+RSHCQ,RSHCQ,,,,,2010-01-01,2011-06-30,1.49,False,True,False,,False,False,False,
+RTN,RTN,,,,,2010-01-01,2020-04-05,10.26,False,True,False,,False,False,False,
+RTX,RTX,RTX Corporation,Industrials,Aerospace & Defense,101829.0,2020-04-03,2025-12-31,5.75,True,False,True,2008-12-01,True,False,False,wikipedia
+RVTY,RVTY,Revvity,Health Care,Health Care Equipment,31791.0,2023-05-16,2025-12-31,2.63,True,False,True,2008-12-01,True,False,False,wikipedia
+RX,RX,,,,,2010-01-01,2010-02-25,0.15,False,True,False,,False,False,False,
+S,S,"Sentinelone, Inc.",,,1583708.0,2010-01-01,2013-07-08,3.52,False,True,False,2021-06-30,False,False,True,sec
+SBAC,SBAC,SBA Communications,Real Estate,Telecom Tower REITs,1034054.0,2017-09-01,2025-12-31,8.33,True,False,True,2008-12-01,True,False,False,wikipedia
+SBNY,SBNY,,,,,2021-12-20,2023-03-14,1.23,False,True,False,2024-08-15,False,False,True,
+SBUX,SBUX,Starbucks,Consumer Discretionary,Restaurants,829224.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SCG,SCG,,,,,2010-01-01,2019-01-01,9.0,False,True,False,,False,False,False,
+SCHW,SCHW,Charles Schwab Corporation,Financials,Investment Banking & Brokerage,316709.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SE,SE,Sea Ltd,,,1703399.0,2010-01-01,2017-02-26,7.16,False,True,False,2017-10-20,False,False,True,sec
+SEDG,SEDG,"Solaredge Technologies, Inc.",Information Technology,,1419612.0,2021-12-20,2023-12-17,1.99,False,True,True,2015-03-26,True,False,False,sec+yahoo
+SEE,SEE,,,,,2010-01-01,2023-12-17,13.96,False,True,False,,False,False,False,
+SHLD,SHLD,,,,,2010-01-01,2012-09-04,2.68,False,True,False,2023-09-14,False,False,True,
+SHW,SHW,Sherwin-Williams,Materials,Specialty Chemicals,89800.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SIAL,SIAL,,,,,2010-01-01,2015-11-17,5.88,False,True,False,,False,False,False,
+SIG,SIG,Signet Jewelers Ltd,Consumer Discretionary,,832988.0,2015-07-29,2018-03-18,2.64,False,True,True,2008-12-01,True,False,False,sec+yahoo
+SII,SII,Sprott Inc.,,,1512920.0,2010-01-01,2010-08-26,0.65,False,True,False,2010-02-22,False,False,True,sec
+SIVB,SIVB,,,,,2018-03-19,2023-03-14,4.99,False,True,False,,False,False,False,
+SJM,SJM,J.M. Smucker Company (The),Consumer Staples,Packaged Foods & Meats,91419.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SLB,SLB,Schlumberger,Energy,Oil & Gas Equipment & Services,87347.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SLG,SLG,Sl Green Realty Corp,Real Estate,,1040971.0,2015-03-23,2021-03-21,6.0,False,True,True,2008-12-01,True,False,False,sec+yahoo
+SLM,SLM,Slm Corp,Financials,,1032033.0,2010-01-01,2014-04-30,4.33,False,True,True,2008-12-01,True,False,False,sec+yahoo
+SMCI,SMCI,Supermicro,Information Technology,"Technology Hardware, Storage & Peripherals",1375365.0,2024-03-18,2025-12-31,1.79,True,False,True,2008-12-01,True,False,False,wikipedia
+SNA,SNA,Snap-on,Industrials,Industrial Machinery & Supplies & Components,91440.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SNDK,SNDK,Sandisk,Information Technology,"Technology Hardware, Storage & Peripherals",2023554.0,2010-01-01,2025-12-31,6.45,True,False,True,2025-02-13,True,False,False,wikipedia
+SNI,SNI,,,,,2010-01-01,2018-03-06,8.18,False,True,False,,False,False,False,
+SNPS,SNPS,Synopsys,Information Technology,Application Software,883241.0,2017-03-16,2025-12-31,8.8,True,False,True,2008-12-01,True,False,False,wikipedia
+SO,SO,Southern Company,Utilities,Electric Utilities,92122.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SOLS,SOLS,Solstice Advanced Materials Inc.,Materials,,2064953.0,2025-10-30,2025-12-21,0.15,False,True,True,2025-10-20,True,False,False,sec+yahoo
+SOLV,SOLV,Solventum,Health Care,Health Care Technology,1964738.0,2024-04-01,2025-12-31,1.75,True,False,True,2024-03-26,True,False,False,wikipedia
+SPG,SPG,Simon Property Group,Real Estate,Retail REITs,1063761.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SPGI,SPGI,S&P Global,Financials,Financial Exchanges & Data,64040.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SPLS,SPLS,,,,,2010-01-01,2017-09-12,7.7,False,True,False,,False,False,False,
+SRCL,SRCL,,,,,2010-01-01,2018-12-02,8.92,False,True,False,,False,False,False,
+SRE,SRE,Sempra,Utilities,Multi-Utilities,1032208.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+STE,STE,Steris,Health Care,Health Care Equipment,1757898.0,2019-12-23,2025-12-31,6.03,True,False,True,2008-12-01,True,False,False,wikipedia
+STI,STI,Solidion Technology Inc.,,,1881551.0,2010-01-01,2019-12-08,9.94,False,True,False,2022-05-02,False,False,True,sec
+STJ,STJ,,,,,2010-01-01,2017-01-04,7.01,False,True,False,,False,False,False,
+STLD,STLD,Steel Dynamics,Materials,Steel,1022671.0,2022-12-22,2025-12-31,3.03,True,False,True,2008-12-01,True,False,False,wikipedia
+STR,STR,,,,,2010-01-01,2010-06-30,0.5,False,True,False,,False,False,False,
+STT,STT,State Street Corporation,Financials,Asset Management & Custody Banks,93751.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+STX,STX,Seagate Technology,Information Technology,"Technology Hardware, Storage & Peripherals",1137789.0,2012-07-02,2025-12-31,13.5,True,False,True,2008-12-01,True,False,False,wikipedia
+STZ,STZ,Constellation Brands,Consumer Staples,Distillers & Vintners,16918.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SUN,SUN,Sunoco Lp,,,1552275.0,2010-01-01,2012-10-04,2.76,False,True,False,,False,False,False,sec
+SUNEQ,SUNEQ,,,,,2010-01-01,2011-12-18,1.96,False,True,False,,False,False,False,
+SVU,SVU,,,,,2010-01-01,2012-04-30,2.33,False,True,False,,False,False,False,
+SW,SW,Smurfit Westrock,Materials,Paper & Plastic Packaging Products & Materials,2005951.0,2024-07-08,2025-12-31,1.48,True,False,True,2008-12-01,True,False,False,wikipedia
+SWK,SWK,Stanley Black & Decker,Industrials,Industrial Machinery & Supplies & Components,93556.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SWKS,SWKS,Skyworks Solutions,Information Technology,Semiconductors,4127.0,2015-03-12,2025-12-31,10.81,True,False,True,2008-12-01,True,False,False,wikipedia
+SWN,SWN,,,,,2010-01-01,2017-04-03,7.26,False,True,False,,False,False,False,
+SWY,SWY,,,,,2010-01-01,2015-01-26,5.07,False,True,False,,False,False,False,
+SYF,SYF,Synchrony Financial,Financials,Consumer Finance,1601712.0,2015-11-18,2025-12-31,10.12,True,False,True,2014-07-31,True,False,False,wikipedia
+SYK,SYK,Stryker Corporation,Health Care,Health Care Equipment,310764.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+SYMC,SYMC,,,,,2010-01-01,2019-11-04,9.84,False,True,False,,False,False,False,
+SYY,SYY,Sysco,Consumer Staples,Food Distributors,96021.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+T,T,AT&T,Communication Services,Integrated Telecommunication Services,732717.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TAP,TAP,Molson Coors Beverage Co,Consumer Staples,,24545.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,sec+yahoo
+TDC,TDC,Teradata Corp /De/,Information Technology,,816761.0,2010-01-01,2017-06-18,7.46,False,True,True,2008-12-01,True,False,False,sec+yahoo
+TDG,TDG,TransDigm Group,Industrials,Aerospace & Defense,1260221.0,2016-06-03,2025-12-31,9.58,True,False,True,2008-12-01,True,False,False,wikipedia
+TDY,TDY,Teledyne Technologies,Information Technology,Electronic Equipment & Instruments,1094285.0,2020-06-22,2025-12-31,5.53,True,False,True,2008-12-01,True,False,False,wikipedia
+TE,TE,T1 Energy Inc.,,,1992243.0,2010-01-01,2016-06-30,6.5,False,True,False,2020-01-10,False,False,True,sec
+TECH,TECH,Bio-Techne,Health Care,Life Sciences Tools & Services,842023.0,2021-08-30,2025-12-31,4.34,True,False,True,2008-12-01,True,False,False,wikipedia
+TEG,TEG,,,,,2010-01-01,2015-06-29,5.49,False,True,False,,False,False,False,
+TEL,TEL,TE Connectivity,Information Technology,Electronic Manufacturing Services,1385157.0,2011-10-17,2025-12-31,14.21,True,False,True,2008-12-01,True,False,False,wikipedia
+TER,TER,Teradyne,Information Technology,Semiconductor Materials & Equipment,97210.0,2010-01-01,2025-12-31,9.25,True,False,True,2008-12-01,True,False,False,wikipedia
+TFC,TFC,Truist Financial,Financials,Diversified Banks,92230.0,2019-12-09,2025-12-31,6.06,True,False,True,2008-12-01,True,False,False,wikipedia
+TFX,TFX,Teleflex Inc,Health Care,,96943.0,2019-01-18,2025-03-23,6.18,False,True,True,2008-12-01,True,False,False,sec+yahoo
+TGNA,TGNA,,,,,2010-01-01,2017-06-01,7.42,False,True,False,,False,False,False,
+TGT,TGT,Target Corporation,Consumer Staples,Consumer Staples Merchandise Retail,27419.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+THC,THC,Tenet Healthcare Corp,Health Care,,70318.0,2010-01-01,2016-04-17,6.29,False,True,True,2008-12-01,True,False,False,sec+yahoo
+TIE,TIE,,,,,2010-01-01,2012-12-23,2.98,False,True,False,,False,False,False,
+TIF,TIF,,,,,2010-01-01,2021-01-06,11.02,False,True,False,,False,False,False,
+TJX,TJX,TJX Companies,Consumer Discretionary,Apparel Retail,109198.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TKO,TKO,TKO Group Holdings,Communication Services,Movies & Entertainment,1973266.0,2025-03-24,2025-12-31,0.77,True,False,True,2008-12-01,True,False,False,wikipedia
+TLAB,TLAB,,,,,2010-01-01,2011-12-20,1.97,False,True,False,,False,False,False,
+TMK,TMK,,,,,2010-01-01,2019-08-07,9.6,False,True,False,,False,False,False,
+TMO,TMO,Thermo Fisher Scientific,Health Care,Life Sciences Tools & Services,97745.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TMUS,TMUS,T-Mobile US,Communication Services,Wireless Telecommunication Services,1283699.0,2010-01-01,2025-12-31,9.8,True,False,True,2008-12-01,True,False,False,wikipedia
+TPL,TPL,Texas Pacific Land Corporation,Energy,Oil & Gas Exploration & Production,1811074.0,2024-11-26,2025-12-31,1.1,True,False,True,2008-12-01,True,False,False,wikipedia
+TPR,TPR,"Tapestry, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods",1116132.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TRGP,TRGP,Targa Resources,Energy,Oil & Gas Storage & Transportation,1389170.0,2022-10-12,2025-12-31,3.22,True,False,True,2010-12-07,True,False,False,wikipedia
+TRIP,TRIP,"Tripadvisor, Inc.",Consumer Discretionary,,1526520.0,2011-12-21,2019-12-22,8.01,False,True,True,2011-12-07,True,False,False,sec+yahoo
+TRMB,TRMB,Trimble Inc.,Information Technology,Application Software,864749.0,2021-01-21,2025-12-31,4.94,True,False,True,2008-12-01,True,False,False,wikipedia
+TROW,TROW,T. Rowe Price,Financials,Asset Management & Custody Banks,1113169.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TRV,TRV,Travelers Companies (The),Financials,Property & Casualty Insurance,86312.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TSCO,TSCO,Tractor Supply,Consumer Discretionary,Other Specialty Retail,916365.0,2014-01-24,2025-12-31,11.94,True,False,True,2008-12-01,True,False,False,wikipedia
+TSLA,TSLA,"Tesla, Inc.",Consumer Discretionary,Automobile Manufacturers,1318605.0,2020-12-21,2025-12-31,5.03,True,False,True,2010-06-29,True,False,False,wikipedia
+TSN,TSN,Tyson Foods,Consumer Staples,Packaged Foods & Meats,100493.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TSS,TSS,,,,,2010-01-01,2019-09-22,9.72,False,True,False,,False,False,False,
+TT,TT,Trane Technologies,Industrials,Building Products,1466258.0,2020-03-03,2025-12-31,5.83,True,False,True,2008-12-01,True,False,False,wikipedia
+TTD,TTD,"Trade Desk, Inc.",Communication Services,,1671933.0,2025-07-18,2025-12-31,0.46,True,False,True,2016-09-21,True,False,False,sec+yahoo
+TTWO,TTWO,Take-Two Interactive,Communication Services,Interactive Home Entertainment,946581.0,2018-03-19,2025-12-31,7.79,True,False,True,2008-12-01,True,False,False,wikipedia
+TWC,TWC,,,,,2010-01-01,2016-05-17,6.38,False,True,False,,False,False,False,
+TWTR,TWTR,,,,,2018-06-07,2022-10-31,4.4,False,True,False,,False,False,False,
+TWX,TWX,,,,,2010-01-01,2018-06-14,8.45,False,True,False,,False,False,False,
+TXN,TXN,Texas Instruments,Information Technology,Semiconductors,97476.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TXT,TXT,Textron,Industrials,Aerospace & Defense,217346.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+TYL,TYL,Tyler Technologies,Information Technology,Application Software,860731.0,2020-06-22,2025-12-31,5.53,True,False,True,2008-12-01,True,False,False,wikipedia
+UA,UA,"Under Armour, Inc.",Consumer Discretionary,,1336917.0,2016-04-08,2022-06-20,6.2,False,True,True,2016-03-23,True,True,False,sec+yahoo
+UAA,UAA,"Under Armour, Inc.",Consumer Discretionary,,1336917.0,2014-05-01,2022-06-20,8.14,False,True,True,2008-12-01,True,False,False,sec+yahoo
+UAL,UAL,United Airlines Holdings,Industrials,Passenger Airlines,100517.0,2015-09-03,2025-12-31,10.33,True,False,True,2008-12-01,True,False,False,wikipedia
+UBER,UBER,Uber,Industrials,Passenger Ground Transportation,1543151.0,2023-12-18,2025-12-31,2.04,True,False,True,2019-05-10,True,False,False,wikipedia
+UDR,UDR,"UDR, Inc.",Real Estate,Multi-Family Residential REITs,74208.0,2016-03-07,2025-12-31,9.82,True,False,True,2008-12-01,True,False,False,wikipedia
+UHS,UHS,Universal Health Services,Health Care,Health Care Facilities,352915.0,2014-09-22,2025-12-31,11.28,True,False,True,2008-12-01,True,False,False,wikipedia
+ULTA,ULTA,Ulta Beauty,Consumer Discretionary,Other Specialty Retail,1403568.0,2016-04-18,2025-12-31,9.71,True,False,True,2008-12-01,True,False,False,wikipedia
+UNH,UNH,UnitedHealth Group,Health Care,Managed Health Care,731766.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+UNM,UNM,Unum Group,Financials,,5513.0,2010-01-01,2021-09-19,11.72,False,True,True,2008-12-01,True,False,False,sec+yahoo
+UNP,UNP,Union Pacific Corporation,Industrials,Rail Transportation,100885.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+UPS,UPS,United Parcel Service,Industrials,Air Freight & Logistics,1090727.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+URBN,URBN,Urban Outfitters Inc,Consumer Discretionary,,912615.0,2010-02-08,2017-03-19,7.11,False,True,True,2008-12-01,True,False,False,sec+yahoo
+URI,URI,United Rentals,Industrials,Trading Companies & Distributors,1067701.0,2014-09-22,2025-12-31,11.28,True,False,True,2008-12-01,True,False,False,wikipedia
+USB,USB,U.S. Bancorp,Financials,Diversified Banks,36104.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+UTX,UTX,,,,,2010-01-01,2020-04-02,10.25,False,True,False,,False,False,False,
+V,V,Visa Inc.,Financials,Transaction & Payment Processing Services,1403161.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+VAR,VAR,,,,,2010-01-01,2021-04-19,11.3,False,True,False,,False,False,False,
+VFC,VFC,V F Corp,Consumer Discretionary,,103379.0,2010-01-01,2024-03-31,14.25,False,True,True,2008-12-01,True,False,False,sec+yahoo
+VIAB,VIAB,,,,,2010-01-01,2019-12-04,9.92,False,True,False,,False,False,False,
+VIAC,VIAC,,,,,2019-12-05,2022-02-16,2.2,False,True,False,,False,False,False,
+VIAV,VIAV,Viavi Solutions Inc.,Information Technology,,912093.0,2010-01-01,2013-12-22,3.98,False,True,True,2008-12-01,True,False,False,sec+yahoo
+VICI,VICI,Vici Properties,Real Estate,Hotel & Resort REITs,1705696.0,2022-06-08,2025-12-31,3.57,True,False,True,2018-01-02,True,False,False,wikipedia
+VLO,VLO,Valero Energy,Energy,Oil & Gas Refining & Marketing,1035002.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+VLTO,VLTO,Veralto,Industrials,Environmental & Facilities Services,1967680.0,2023-10-02,2025-12-31,2.25,True,False,True,2023-10-04,True,False,False,wikipedia
+VMC,VMC,Vulcan Materials Company,Materials,Construction Materials,1396009.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+VNO,VNO,Vornado Realty Trust,Real Estate,,899689.0,2010-01-01,2023-01-03,13.01,False,True,True,2008-12-01,True,False,False,sec+yahoo
+VNT,VNT,Vontier Corp,Information Technology,,1786842.0,2020-10-12,2021-03-21,0.44,False,True,True,2020-09-24,True,False,False,sec+yahoo
+VRSK,VRSK,Verisk Analytics,Industrials,Research & Consulting Services,1442145.0,2015-10-08,2025-12-31,10.23,True,False,True,2009-10-07,True,False,False,wikipedia
+VRSN,VRSN,Verisign,Information Technology,Internet Services & Infrastructure,1014473.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+VRTX,VRTX,Vertex Pharmaceuticals,Health Care,Biotechnology,875320.0,2013-09-23,2025-12-31,12.27,True,False,True,2008-12-01,True,False,False,wikipedia
+VST,VST,Vistra Corp.,Utilities,Electric Utilities,1692819.0,2024-05-08,2025-12-31,1.65,True,False,True,2016-10-05,True,False,False,wikipedia
+VTR,VTR,Ventas,Real Estate,Health Care REITs,740260.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+VTRS,VTRS,Viatris,Health Care,Pharmaceuticals,1792044.0,2020-11-17,2025-12-31,5.12,True,False,True,2008-12-01,True,False,False,wikipedia
+VZ,VZ,Verizon,Communication Services,Integrated Telecommunication Services,732712.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WAB,WAB,Wabtec,Industrials,Construction Machinery & Heavy Transportation Equipment,943452.0,2019-02-27,2025-12-31,6.84,True,False,True,2008-12-01,True,False,False,wikipedia
+WAT,WAT,Waters Corporation,Health Care,Life Sciences Tools & Services,1000697.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WBA,WBA,,,,,2010-01-01,2025-08-27,15.66,False,True,False,,False,False,False,
+WBD,WBD,"Warner Bros. Discovery, Inc.",,,1437107.0,2022-04-11,2025-12-31,3.73,True,False,False,,False,False,False,sec
+WCG,WCG,,,,,2018-09-17,2020-01-27,1.36,False,True,False,,False,False,False,
+WDAY,WDAY,"Workday, Inc.",Information Technology,Application Software,1327811.0,2024-12-23,2025-12-31,1.02,True,False,True,2012-10-12,True,False,False,wikipedia
+WDC,WDC,Western Digital,Information Technology,"Technology Hardware, Storage & Peripherals",106040.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WEC,WEC,WEC Energy Group,Utilities,Electric Utilities,783325.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WELL,WELL,Welltower,Real Estate,Health Care REITs,766704.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WFC,WFC,Wells Fargo,Financials,Diversified Banks,72971.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WFM,WFM,,,,,2010-01-01,2017-08-27,7.66,False,True,False,,False,False,False,
+WHR,WHR,Whirlpool Corp /De/,Consumer Discretionary,,106640.0,2010-01-01,2024-03-17,14.21,False,True,True,2008-12-01,True,False,False,sec+yahoo
+WIN,WIN,,,,,2010-01-01,2015-04-06,5.26,False,True,False,,False,False,False,
+WLTW,WLTW,,,,,2016-01-05,2022-01-09,6.02,False,True,False,,False,False,False,
+WM,WM,Waste Management,Industrials,Environmental & Facilities Services,823768.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WMB,WMB,Williams Companies,Energy,Oil & Gas Storage & Transportation,107263.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WMT,WMT,Walmart,Consumer Staples,Consumer Staples Merchandise Retail,104169.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WPX,WPX,,,,,2012-01-03,2014-03-23,2.22,False,True,False,,False,False,False,
+WRB,WRB,W. R. Berkley Corporation,Financials,Property & Casualty Insurance,11544.0,2019-12-05,2025-12-31,6.08,True,False,True,2008-12-01,True,False,False,wikipedia
+WRK,WRK,,,,,2015-07-02,2024-07-07,9.02,False,True,False,,False,False,False,
+WSM,WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,Homefurnishing Retail,719955.0,2025-03-24,2025-12-31,0.77,True,False,True,2008-12-01,True,False,False,wikipedia
+WST,WST,West Pharmaceutical Services,Health Care,Health Care Supplies,105770.0,2020-05-22,2025-12-31,5.61,True,False,True,2008-12-01,True,False,False,wikipedia
+WTW,WTW,Willis Towers Watson,Financials,Insurance Brokers,1140536.0,2022-01-10,2025-12-31,3.98,True,False,True,2008-12-01,True,False,False,wikipedia
+WU,WU,Western Union Co,Financials,,1365135.0,2010-01-01,2021-12-19,11.97,False,True,True,2008-12-01,True,False,False,sec+yahoo
+WY,WY,Weyerhaeuser,Real Estate,Timber REITs,106535.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+WYND,WYND,,,,,2010-01-01,2018-05-30,8.41,False,True,False,,False,False,False,
+WYNN,WYNN,Wynn Resorts,Consumer Discretionary,Casinos & Gaming,1174922.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+X,X,,,,,2010-01-01,2014-07-01,4.5,False,True,False,,False,False,False,
+XEC,XEC,,,,,2014-06-20,2020-03-02,5.7,False,True,False,,False,False,False,
+XEL,XEL,Xcel Energy,Utilities,Multi-Utilities,72903.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+XL,XL,,,,,2010-01-01,2018-09-11,8.7,False,True,False,,False,False,False,
+XLNX,XLNX,,,,,2010-01-01,2022-02-14,12.12,False,True,False,,False,False,False,
+XOM,XOM,ExxonMobil,Energy,Integrated Oil & Gas,2115436.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+XRAY,XRAY,Dentsply Sirona Inc.,Health Care,,818479.0,2010-01-01,2024-04-01,14.25,False,True,True,2008-12-01,True,False,False,sec+yahoo
+XRX,XRX,Xerox Holdings Corp,Industrials,,1770450.0,2010-01-01,2021-03-21,11.22,False,True,True,2008-12-01,True,False,False,sec+yahoo
+XTO,XTO,,,,,2010-01-01,2010-06-27,0.49,False,True,False,,False,False,False,
+XYL,XYL,Xylem Inc.,Industrials,Industrial Machinery & Supplies & Components,1524472.0,2011-11-01,2025-12-31,14.17,True,False,True,2011-10-13,True,False,False,wikipedia
+XYZ,XYZ,"Block, Inc.",Financials,Transaction & Payment Processing Services,1512673.0,2025-07-23,2025-12-31,0.44,True,False,True,2015-11-19,True,False,False,wikipedia
+YUM,YUM,Yum! Brands,Consumer Discretionary,Restaurants,1041061.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ZBH,ZBH,Zimmer Biomet,Health Care,Health Care Equipment,1136869.0,2010-01-01,2025-12-31,16.0,True,False,True,2008-12-01,True,False,False,wikipedia
+ZBRA,ZBRA,Zebra Technologies,Information Technology,Electronic Equipment & Instruments,877212.0,2019-12-23,2025-12-31,6.03,True,False,True,2008-12-01,True,False,False,wikipedia
+ZION,ZION,"Zions Bancorporation, National Association /Ut/",Financials,,109380.0,2010-01-01,2024-03-17,14.21,False,True,True,2008-12-01,True,False,False,sec+yahoo
+ZTS,ZTS,Zoetis,Health Care,Pharmaceuticals,1555280.0,2013-06-24,2025-12-31,12.52,True,False,True,2013-02-01,True,False,False,wikipedia
