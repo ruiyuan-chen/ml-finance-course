@@ -1,0 +1,5 @@
+# Keep instructor material (answer keys, teaching notes, data-build cache) out of the public repo
+instructor/
+*.zip
+__pycache__/
+.ipynb_checkpoints/
