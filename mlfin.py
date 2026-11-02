@@ -17,7 +17,7 @@ import re
 import numpy as np
 import pandas as pd
 
-__version__ = "1.2"
+__version__ = "1.3"
 
 # ---------------------------------------------------------------------------------------------
 # Where the data lives
@@ -879,6 +879,362 @@ def compare_models(models, X_train, y_train, X_test, y_test, dates_test=None, to
         plt.tight_layout()
         plt.show()
     return res.round(3)
+
+
+# ---------------------------------------------------------------------------------------------
+# Week 7: honest backtesting
+# ---------------------------------------------------------------------------------------------
+def plot_backtest_loop(test_start=2015, end=2025, data_start=2010):
+    """The walk-forward loop as a picture: each year the model is re-trained on everything before
+    that year (navy) and then trades that year only (gold). It never sees its own trading year."""
+    plt = _plt()
+    years = list(range(test_start, end + 1))
+    fig, ax = plt.subplots(figsize=(9, 0.32 * len(years) + 1.4))
+    for i, y in enumerate(years):
+        row = len(years) - i
+        ax.barh(row, y - data_start, left=data_start, color=NAVY, height=0.65)
+        ax.barh(row, 1, left=y, color=GOLD, height=0.65)
+    ax.set_yticks(range(1, len(years) + 1), [str(y) for y in reversed(years)])
+    ax.set_xlim(data_start, end + 1)
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Trading year")
+    ax.set_title("Walk-forward: re-train on the past (navy), trade the next year (gold), repeat")
+    plt.tight_layout()
+    plt.show()
+
+
+def _ann(x):
+    x = pd.Series(x).dropna()
+    return (1 + x).prod() ** (12 / len(x)) - 1 if len(x) else np.nan
+
+
+def cost_experiment(result, costs=(0, 10, 20, 50), plot=True):
+    """Re-price ONE backtest at several trading costs (basis points per dollar traded; 20 bps =
+    0.20%). The picks don't change, only what you pay to make them. Returns a table."""
+    r = result["returns"]
+    gross = r["strategy_gross"]
+    tc = pd.Series(0.0, index=r.index)
+    for d, t in result["turnover"].items():
+        key = d + pd.offsets.MonthEnd(1)
+        if key in tc.index:
+            tc[key] = t
+    rows, curves = [], {}
+    for c in costs:
+        net = gross - tc * c / 1e4
+        curves[c] = (1 + net).cumprod()
+        rows.append({"cost (bps)": c, "Ann. return": _ann(net), "SPY": _ann(r["SPY"]),
+                     "Beats SPY?": "yes" if _ann(net) > _ann(r["SPY"]) else "no"})
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(9, 4.5))
+        shades = ["#022e5c", "#3f6aa0", "#8c6100", "#eaaa00", "#b8bec8"]
+        for (c, cur), col in zip(curves.items(), shades):
+            ax.plot(cur.index, cur.values, color=col, lw=2, label=f"Strategy, {c} bps cost")
+        spy = (1 + r["SPY"]).cumprod()
+        ax.plot(spy.index, spy.values, color="black", lw=1.5, ls="--", label="SPY")
+        ax.set_title("Same picks, different trading costs")
+        ax.set_ylabel("Value of $1 invested")
+        ax.set_xlabel("Date")
+        ax.legend(fontsize=9)
+        ax.grid(alpha=0.3)
+        plt.tight_layout()
+        plt.show()
+    out = pd.DataFrame(rows).set_index("cost (bps)")
+    out[["Ann. return", "SPY"]] = out[["Ann. return", "SPY"]].round(3)
+    return out
+
+
+def rebalance_experiment(panel, model, freqs=("M", "Q", "A"), cost_bps=20, **kwargs):
+    """Run the same backtest with monthly, quarterly and yearly rebalancing and compare: trading
+    more often uses newer predictions but pays more costs. Extra arguments go to
+    walk_forward_backtest (e.g. features=..., n_long=...)."""
+    names = {"M": "monthly", "Q": "quarterly", "A": "yearly"}
+    rows = []
+    for f in freqs:
+        res = walk_forward_backtest(panel, model, rebalance=f, cost_bps=cost_bps, verbose=False, **kwargs)
+        st = res["stats"]
+        rows.append({"rebalance": names.get(f, f),
+                     "Ann. return before costs": _ann(res["returns"]["strategy_gross"]),
+                     "Ann. return after costs": st.loc["Ann. return", "Strategy (after costs)"],
+                     "SPY": st.loc["Ann. return", "SPY"],
+                     "Turnover/yr": st.loc["Turnover/yr", "Strategy (after costs)"],
+                     "Sharpe ratio": st.loc["Sharpe ratio", "Strategy (after costs)"],
+                     "Max drawdown": st.loc["Max drawdown", "Strategy (after costs)"]})
+    return pd.DataFrame(rows).set_index("rebalance").round(3)
+
+
+def pick_hit_rate(result, panel, label="beat_next"):
+    """How often the stocks the strategy bought actually beat SPY the next month, compared with
+    all stocks in the universe in the same months. This is the strategy's 'accuracy'."""
+    lab = panel.set_index(["date", "ticker"])[label]
+    hits, base = [], []
+    for d, picks in result["picks"].items():
+        hits.append(lab.reindex([(d, t) for t in picks]).mean())
+        base.append(panel.loc[panel["date"] == d, label].mean())
+    out = pd.Series({"picks that beat SPY next month": np.nanmean(hits),
+                     "all stocks that beat SPY (same months)": np.nanmean(base)})
+    return out.round(3)
+
+
+def excess_return_tstat(result):
+    """Is the strategy's edge over SPY more than luck? Average monthly return above SPY, and its
+    t-statistic (roughly: how many standard errors away from zero). Rule of thumb: below 2 means
+    the edge could easily be luck."""
+    ex = (result["returns"]["strategy"] - result["returns"]["SPY"]).dropna()
+    t = ex.mean() / ex.std() * np.sqrt(len(ex))
+    out = pd.Series({"months": len(ex), "avg monthly return above SPY (%)": round(ex.mean() * 100, 3),
+                     "t-statistic": round(t, 2), "could be luck?": "yes" if abs(t) < 2 else "unlikely"})
+    print(f"Average edge over SPY: {ex.mean() * 100:.2f}% a month over {len(ex)} months; t = {t:.2f}. "
+          + ("That could easily be luck." if abs(t) < 2 else "That is unlikely to be pure luck."))
+    return out
+
+
+# ---------------------------------------------------------------------------------------------
+# Week 8: valuation with ML
+# ---------------------------------------------------------------------------------------------
+VALUATION_PREDICTORS = ["roe", "growth", "margin", "leverage", "size", "beta_12", "vol_12", "mom_12_1"]
+
+
+def make_valuation_panel(month=12, start="2010-01-31", end="2024-12-31"):
+    """One row per stock at each year-end (month=12) with what an investor knew then:
+      ev         enterprise value = market cap + debt - cash ($)
+      ev_ebitda  EV / trailing-12-month EBITDA (only when both are positive)
+      pb         price-to-book = market cap / book equity (only when book equity is positive)
+      roe        return on equity = trailing-12-month net income / book equity
+    plus the usual features, the company name and sector, and ret_next_12 (the NEXT 12 months'
+    return, for testing). Financial-statement numbers are used only after they were filed."""
+    panel = make_features(clip=False)
+    snap = panel[(panel["date"].dt.month == month) & (panel["date"] >= pd.Timestamp(start))
+                 & (panel["date"] <= pd.Timestamp(end))].sort_values("date").copy()
+    fund = load_fundamentals()
+    known = _fundamentals_as_known(fund).sort_values("known_date")
+    known["known_date"] = known["known_date"].astype("datetime64[ns]")
+    snap["date"] = snap["date"].astype("datetime64[ns]")
+    cols = ["ebitda_ttm", "net_income_ttm", "total_debt", "book_equity", "period_end"]
+    snap = pd.merge_asof(snap, known[["ticker", "known_date"] + cols], left_on="date",
+                         right_on="known_date", by="ticker", direction="backward")
+    cash = fund[["ticker", "report_date", "period_end", "cash"]].dropna(subset=["report_date"]).copy()
+    cash["report_date"] = pd.to_datetime(cash["report_date"]).astype("datetime64[ns]")
+    cash = cash.rename(columns={"period_end": "_pe_cash"}).sort_values("report_date")
+    snap = pd.merge_asof(snap.sort_values("date"), cash, left_on="date", right_on="report_date",
+                         by="ticker", direction="backward")
+    stale = (snap["date"] - snap["period_end"]).dt.days > 456
+    snap.loc[stale, ["ebitda_ttm", "net_income_ttm", "total_debt", "book_equity"]] = np.nan
+    snap["cash"] = snap["cash"].where(snap["_pe_cash"] == snap["period_end"])
+    mc = snap["mktcap"] * 1e6
+    snap["ev"] = mc + snap["total_debt"].fillna(0) - snap["cash"].fillna(0)
+    snap["ev_ebitda"] = np.where((snap["ebitda_ttm"] > 0) & (snap["ev"] > 0), snap["ev"] / snap["ebitda_ttm"], np.nan)
+    snap["pb"] = np.where(snap["book_equity"] > 0, mc / snap["book_equity"], np.nan)
+    snap["roe"] = np.where(snap["book_equity"] > 0, snap["net_income_ttm"] / snap["book_equity"], np.nan)
+    snap["year"] = snap["date"].dt.year
+    names = load_universe().set_index("ticker")["name"]
+    snap["name"] = snap["ticker"].map(names)
+    keep = ["date", "year", "ticker", "name", "sector", "mktcap", "ev", "ev_ebitda", "pb", "roe", "growth",
+            "margin", "leverage", "size", "beta_12", "vol_12", "mom_12_1", "ret_next_12"]
+    return snap[keep].sort_values(["year", "ticker"]).reset_index(drop=True)
+
+
+def fit_valuation(vp, multiple="pb", predictors=None, sector=None, model=None, folds=5):
+    """'Comparables' done by machine. Each year, predict every firm's (log) multiple from its
+    fundamentals and sector, using a model trained on the OTHER firms that year (cross-validation),
+    so no firm is its own comparable. Adds columns:
+      predicted      the multiple the model says the firm 'should' trade at
+      gap            log(actual / predicted): below 0 = cheap vs. its comparables, above 0 = expensive
+      comps_gap      the same gap against the plain sector median (classic comps)
+    Prints how much of the differences in multiples each method explains (R-squared)."""
+    from sklearn.ensemble import HistGradientBoostingRegressor
+    from sklearn.model_selection import KFold, cross_val_predict
+    from sklearn.base import clone
+    predictors = list(predictors or VALUATION_PREDICTORS)
+    model = model or HistGradientBoostingRegressor(max_iter=200, learning_rate=0.05, max_depth=3, random_state=0)
+    d = vp.dropna(subset=[multiple] + predictors).copy()
+    if multiple == "ev_ebitda":
+        d = d[d["sector"] != "Financials"]
+    if sector is not None:
+        d = d[d["sector"] == sector]
+    out, r2 = [], []
+    for y, g in d.groupby("year"):
+        lo, hi = g[multiple].quantile([0.01, 0.99])
+        g = g[(g[multiple] >= lo) & (g[multiple] <= hi)].copy()
+        if len(g) < 5 * folds:
+            continue
+        X = g[predictors]
+        if sector is None:
+            X = X.join(pd.get_dummies(g["sector"], prefix="sec", dtype=float))
+        yv = np.log(g[multiple])
+        pred = cross_val_predict(clone(model), X, yv, cv=KFold(folds, shuffle=True, random_state=0))
+        comps = yv.groupby(g["sector"]).transform("median")
+        g["predicted"] = np.exp(pred)
+        g["gap"] = yv - pred
+        g["comps_gap"] = yv - comps
+        ss = ((yv - yv.mean()) ** 2).sum()
+        r2.append({"year": y, "firms": len(g), "R2 ML": 1 - ((yv - pred) ** 2).sum() / ss,
+                   "R2 sector median": 1 - ((yv - comps) ** 2).sum() / ss})
+        out.append(g)
+    res = pd.concat(out)
+    r2 = pd.DataFrame(r2).set_index("year")
+    print(f"{multiple}: {len(res):,} firm-years. Share of differences in the multiple explained (R-squared), "
+          f"average over years: ML {r2['R2 ML'].mean():.2f}, sector median {r2['R2 sector median'].mean():.2f}")
+    res.attrs["r2_ml"] = round(float(r2["R2 ML"].mean()), 3)
+    res.attrs["r2_sector_median"] = round(float(r2["R2 sector median"].mean()), 3)
+    res.attrs["multiple"] = multiple
+    return res
+
+
+def plot_valuation(vals, year, n_label=6, title=None):
+    """Actual vs. predicted multiple for one year (log scales). Firms below the diagonal trade
+    below what their fundamentals 'justify' (cheap); above it, expensive. Labels the extremes."""
+    plt = _plt()
+    mult = vals.attrs.get("multiple", "multiple")
+    g = vals[vals["year"] == year]
+    fig, ax = plt.subplots(figsize=(7.5, 6))
+    ax.scatter(g["predicted"], g[mult], s=14, color=GREY, alpha=0.8)
+    lo = min(g["predicted"].min(), g[mult].min()) * 0.9
+    hi = max(g["predicted"].max(), g[mult].max()) * 1.1
+    ax.plot([lo, hi], [lo, hi], color="black", lw=1, ls="--", label="actual = predicted")
+    for _, r in pd.concat([g.nsmallest(n_label, "gap"), g.nlargest(n_label, "gap")]).iterrows():
+        col = GOLD if r["gap"] < 0 else NAVY
+        ax.scatter(r["predicted"], r[mult], s=40, color=col)
+        ax.annotate(r["ticker"], (r["predicted"], r[mult]), fontsize=8, xytext=(3, 3), textcoords="offset points")
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel(f"Predicted {mult} (what the fundamentals 'justify')")
+    ax.set_ylabel(f"Actual {mult}")
+    ax.set_title(title or f"{year}: cheap (gold, below the line) and expensive (navy, above)")
+    ax.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def valuation_returns(vals, col="gap", groups=5, plot=True):
+    """Do 'cheap' stocks beat 'expensive' ones over the NEXT 12 months? Each year, sort firms into
+    groups by the gap (group 1 = cheapest); show each group's average next-12-month return, and the
+    cheapest-minus-most-expensive difference year by year."""
+    d = vals.dropna(subset=["ret_next_12"]).copy()
+    d["group"] = d.groupby("year")[col].transform(
+        lambda s: pd.qcut(s.rank(method="first"), groups, labels=False) + 1)
+    by = d.groupby(["year", "group"])["ret_next_12"].mean().unstack()
+    avg = by.mean() * 100
+    spread = (by[1] - by[groups]) * 100
+    if plot:
+        plt = _plt()
+        fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 4))
+        a1.bar(avg.index, avg.values, color=[GOLD] + [GREY] * (groups - 2) + [NAVY])
+        a1.set_xticks(avg.index)
+        a1.set_xlabel(f"Group (1 = cheapest by {col}, {groups} = most expensive)")
+        a1.set_ylabel("Average next-12-month return (%)")
+        a1.set_title("Next-year return by valuation group")
+        a2.bar(spread.index, spread.values, color=[GOLD if v > 0 else NAVY for v in spread.values])
+        a2.axhline(0, color="black", lw=0.8)
+        a2.set_xlabel("Year the groups were formed")
+        a2.set_ylabel("Cheapest minus most expensive (%)")
+        a2.set_title(f"Cheap beat expensive in {(spread > 0).sum()} of {len(spread)} years")
+        for a in (a1, a2):
+            a.grid(alpha=0.3, axis="y")
+        plt.tight_layout()
+        plt.show()
+    return pd.DataFrame({"avg next-12m return (%)": avg.round(1)}), spread.round(1)
+
+
+# ---------------------------------------------------------------------------------------------
+# Week 9: structure without a target
+# ---------------------------------------------------------------------------------------------
+def plot_correlation(returns, tickers=None, n=40, seed=0, title=None):
+    """Heatmap of how monthly returns move together (correlation: 1 = in lockstep, 0 = unrelated).
+    Stocks are sorted by sector so related companies sit next to each other."""
+    plt = _plt()
+    r = returns.drop(columns=[BENCHMARK], errors="ignore")
+    if tickers is None:
+        ok = r.columns[r.notna().mean() >= 0.95]
+        tickers = list(pd.Series(ok).sample(min(n, len(ok)), random_state=seed))
+    sec = load_universe().set_index("ticker")["sector"].reindex(tickers).fillna("?")
+    order = list(sec.sort_values(kind="stable").index)
+    c = r[order].corr()
+    fig, ax = plt.subplots(figsize=(9, 8))
+    im = ax.imshow(c.values, cmap="RdBu_r", vmin=-1, vmax=1)
+    ax.set_xticks(range(len(order)), order, rotation=90, fontsize=7)
+    ax.set_yticks(range(len(order)), [f"{t} ({sec[t][:12]})" for t in order], fontsize=7)
+    fig.colorbar(im, ax=ax, shrink=0.7, label="correlation")
+    ax.set_title(title or "Which stocks move together? (sorted by sector)")
+    plt.tight_layout()
+    plt.show()
+    return c
+
+
+def pca_bets(returns, tickers=None, n_stocks=30, seed=0, plot=True):
+    """Principal component analysis: how many independent 'bets' hide in a portfolio? Finds the
+    few combined movements that explain most of the ups and downs of the stocks.
+    Returns the share of the movement explained by each component."""
+    from sklearn.decomposition import PCA
+    r = returns.drop(columns=[BENCHMARK], errors="ignore")
+    ok = r.columns[r.notna().mean() >= 0.95]
+    if tickers is None:
+        tickers = list(pd.Series(ok).sample(min(n_stocks, len(ok)), random_state=seed))
+    x = r[tickers].dropna()
+    z = (x - x.mean()) / x.std()
+    p = PCA().fit(z.values)
+    ev = pd.Series(p.explained_variance_ratio_, index=range(1, len(tickers) + 1), name="share explained")
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(8, 4))
+        top = ev.head(15)
+        ax.bar(top.index, top.values * 100, color=[GOLD] + [NAVY] * (len(top) - 1))
+        ax.plot(top.index, top.cumsum().values * 100, "o-", color="black", lw=1.2, label="cumulative")
+        ax.set_xticks(top.index)
+        ax.set_xlabel("Component (1 = the biggest common movement)")
+        ax.set_ylabel("% of all the stocks' ups and downs")
+        ax.set_title(f"{len(tickers)} stocks, but how many real bets?")
+        ax.legend()
+        ax.grid(alpha=0.3, axis="y")
+        plt.tight_layout()
+        plt.show()
+    spy = returns[BENCHMARK].reindex(x.index) if BENCHMARK in returns else None
+    if spy is not None:
+        pc1 = p.transform(z.values)[:, 0]
+        print(f"Component 1 explains {ev.iloc[0]:.0%} on its own; its correlation with the S&P 500 is "
+              f"{abs(np.corrcoef(pc1, spy.values)[0, 1]):.2f} (it is 'the market'). "
+              f"{int((ev.cumsum() < 0.5).sum()) + 1} components explain half of all the movement.")
+    return ev.round(3)
+
+
+def diversification_experiment(returns, labels, n=10, draws=300, seed=0, plot=True):
+    """Build many equal-weighted n-stock portfolios three ways: all n stocks from ONE cluster,
+    n stocks picked at random, and one stock from each of n different clusters. Compare how much
+    the portfolios swing (annualised volatility) and how closely their stocks move together
+    (average correlation). Lower = better diversified for the same number of stocks."""
+    rng = np.random.default_rng(seed)
+    r = returns[labels.index]
+    groups = {c: list(t) for c, t in labels.groupby(labels).groups.items()}
+    big = [c for c in groups if len(groups[c]) >= n]
+    k = len(groups)
+    vols = {"all from one cluster": [], "random picks": [], "one per cluster": []}
+    cors = {key: [] for key in vols}
+    iu = np.triu_indices(n, 1)
+    for _ in range(draws):
+        picks = {
+            "all from one cluster": list(rng.choice(groups[rng.choice(big)], n, replace=False)),
+            "random picks": list(rng.choice(labels.index, n, replace=False)),
+            "one per cluster": [rng.choice(groups[c]) for c in rng.choice(list(groups), n, replace=n > k)],
+        }
+        for key, pk in picks.items():
+            vols[key].append(r[pk].mean(axis=1).std() * np.sqrt(12) * 100)
+            cors[key].append(np.nanmean(r[pk].corr().values[iu]))
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(8, 4))
+        data = [vols[key] for key in vols]
+        bp = ax.boxplot(data, vert=False, patch_artist=True, showfliers=False, widths=0.55)
+        for patch, col in zip(bp["boxes"], [NAVY, GREY, GOLD]):
+            patch.set_facecolor(col)
+            patch.set_alpha(0.75)
+        ax.set_yticks([1, 2, 3], list(vols))
+        ax.set_xlabel(f"Volatility of an equal-weighted {n}-stock portfolio (% a year)")
+        ax.set_title(f"Same number of stocks, different diversification ({draws} portfolios each)")
+        ax.grid(alpha=0.3, axis="x")
+        plt.tight_layout()
+        plt.show()
+    return pd.DataFrame({"median volatility (% a year)": {key: np.median(v) for key, v in vols.items()},
+                         "avg correlation between the stocks": {key: np.median(v) for key, v in cors.items()}}).round(2)
 
 # ---------------------------------------------------------------------------------------------
 # Plots
