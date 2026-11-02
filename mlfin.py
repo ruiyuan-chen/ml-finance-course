@@ -17,7 +17,7 @@ import re
 import numpy as np
 import pandas as pd
 
-__version__ = "1.3"
+__version__ = "1.4"
 
 # ---------------------------------------------------------------------------------------------
 # Where the data lives
@@ -378,7 +378,7 @@ def _scores(model, X):
 
 def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, rebalance="Q",
                           cost_bps=20, weighting="equal", test_start="2015-01-01", max_weight=None,
-                          verbose=True):
+                          max_per_cluster=None, cluster_k=8, verbose=True):
     """Simulate investing with a model the honest way ("walk-forward"):
 
       * At the start of each year the model is re-trained on ALL earlier months (only months whose
@@ -390,8 +390,13 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
 
     model     any scikit-learn model. A classifier is scored with its probability of class 1
               (default target "beat_next"); a regressor with its prediction ("ret_next").
-    weighting "equal", "rank" (more weight to higher scores), or "inverse_vol" (less weight to
-              volatile stocks). max_weight caps any single stock's weight (e.g. 0.05).
+    weighting "equal", "rank" (more weight to higher scores), "inverse_vol" (less weight to
+              volatile stocks) or "cluster" (equal weights, but at most max_per_cluster stocks from
+              any one cluster of stocks that move together; see cluster_stocks). max_weight caps
+              any single stock's weight (e.g. 0.05).
+    max_per_cluster  with any weighting: never hold more than this many stocks from one cluster.
+              The clusters are re-estimated each year from the previous 5 years of monthly
+              returns only (cluster_k groups), so they never use the future.
 
     Returns a dictionary with monthly returns of the strategy, SPY and an equal-weighted
     portfolio of the whole universe, cumulative growth of $1, turnover, the picks on every
@@ -412,6 +417,12 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
     spy_next = panel.groupby("date")["spy_next"].first()
     ew_next = panel.groupby("date")["ret_next"].mean()
 
+    if weighting == "cluster" and not max_per_cluster:
+        max_per_cluster = int(np.ceil(n_long / cluster_k))
+    monthly_returns = to_returns(load_prices("M")) if max_per_cluster else None
+    clusters = None
+    cluster_log = {}
+
     fitted_year, fitted, last_train = None, None, None
     w = pd.Series(dtype=float)
     rows, picks_log, turnover_log = [], {}, []
@@ -429,6 +440,9 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
                 sample = X.sample(min(5000, len(X)), random_state=0)
                 last_train = (sample, y.loc[sample.index])
                 fitted_year = d.year
+                if max_per_cluster:
+                    past = monthly_returns.loc[d - pd.DateOffset(years=5):d - pd.offsets.MonthEnd(1)]
+                    clusters = cluster_stocks(past, k=cluster_k, plot=False)
                 if verbose:
                     print(f"  {d.year}: trained on {len(X):,} stock-months up to {cutoff.date()}")
             now = data[data["date"] == d]
@@ -439,8 +453,22 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
             else:
                 Xn = now[features]
             sc = pd.Series(_scores(fitted, Xn), index=now["ticker"].values)
-            top = sc.sort_values(ascending=False).head(n_long)
-            if weighting == "equal":
+            ranked = sc.sort_values(ascending=False)
+            if max_per_cluster:
+                lab = clusters.reindex(ranked.index).fillna(-1)
+                chosen, count = [], {}
+                for t in ranked.index:
+                    c = lab[t]
+                    if count.get(c, 0) < max_per_cluster:
+                        chosen.append(t)
+                        count[c] = count.get(c, 0) + 1
+                    if len(chosen) == n_long:
+                        break
+                top = ranked[chosen]
+                cluster_log[d] = lab[chosen].value_counts().to_dict()
+            else:
+                top = ranked.head(n_long)
+            if weighting in ("equal", "cluster"):
                 new = pd.Series(1.0, index=top.index)
             elif weighting == "rank":
                 new = pd.Series(np.arange(len(top), 0, -1, dtype=float), index=top.index)
@@ -448,7 +476,7 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
                 vol = now.set_index("ticker")["vol_12"].reindex(top.index)
                 new = 1 / vol.clip(lower=vol.median() * 0.25)
             else:
-                raise ValueError('weighting must be "equal", "rank" or "inverse_vol"')
+                raise ValueError('weighting must be "equal", "rank", "inverse_vol" or "cluster"')
             new = new / new.sum()
             if max_weight:
                 for _ in range(20):
@@ -486,7 +514,9 @@ def walk_forward_backtest(panel, model, features=None, target=None, n_long=30, r
         "picks": picks_log,
         "settings": dict(n_long=n_long, rebalance=rebalance, cost_bps=cost_bps, weighting=weighting,
                          features=features, target=target, model=type(model).__name__,
-                         test_start=str(test_start)),
+                         test_start=str(test_start), max_weight=max_weight,
+                         max_per_cluster=max_per_cluster),
+        "clusters_held": cluster_log,
         "model": fitted,
         "train_sample": last_train,   # 5,000 rows of the final year's training data
     }
@@ -1236,6 +1266,289 @@ def diversification_experiment(returns, labels, n=10, draws=300, seed=0, plot=Tr
     return pd.DataFrame({"median volatility (% a year)": {key: np.median(v) for key, v in vols.items()},
                          "avg correlation between the stocks": {key: np.median(v) for key, v in cors.items()}}).round(2)
 
+
+# ---------------------------------------------------------------------------------------------
+# Week 10: portfolio construction
+# ---------------------------------------------------------------------------------------------
+PORTFOLIO_STOCKS = ["AAPL", "MSFT", "JPM", "XOM", "JNJ", "PG", "KO", "WMT", "HD", "CAT"]
+
+WEIGHTING_NAMES = {"equal": "Equal weight", "rank": "Rank-weighted", "inverse_vol": "Inverse volatility",
+                   "cluster": "Cluster-balanced"}
+
+
+def compare_weightings(panel, model, schemes=("equal", "rank", "inverse_vol", "cluster"), n_long=30,
+                       rebalance="Q", cost_bps=20, plot=True, **kwargs):
+    """Same model, same ranked list, different ways of turning the list into a portfolio.
+    Runs one walk-forward backtest per weighting scheme and returns (table, results).
+    Extra arguments go to walk_forward_backtest (e.g. features=..., max_weight=0.05)."""
+    results, rows = {}, []
+    for sc in schemes:
+        res = walk_forward_backtest(panel, model, n_long=n_long, rebalance=rebalance, cost_bps=cost_bps,
+                                    weighting=sc, verbose=False, **kwargs)
+        results[sc] = res
+        st = res["stats"]["Strategy (after costs)"]
+        rows.append({"scheme": WEIGHTING_NAMES.get(sc, sc), "Ann. return": st["Ann. return"],
+                     "Volatility": st["Volatility"], "Sharpe ratio": st["Sharpe ratio"],
+                     "Max drawdown": st["Max drawdown"], "Turnover/yr": st["Turnover/yr"]})
+    spy = results[schemes[0]]["stats"]["SPY"]
+    rows.append({"scheme": "SPY", "Ann. return": spy["Ann. return"], "Volatility": spy["Volatility"],
+                 "Sharpe ratio": spy["Sharpe ratio"], "Max drawdown": spy["Max drawdown"], "Turnover/yr": np.nan})
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(9, 4.5))
+        cols = [NAVY, "#3f6aa0", "#8c6100", GOLD, GREY]
+        for (sc, res), col in zip(results.items(), cols):
+            cur = res["cumulative"]["strategy"]
+            ax.plot(cur.index, cur.values, color=col, lw=2, label=WEIGHTING_NAMES.get(sc, sc))
+        spyc = results[schemes[0]]["cumulative"]["SPY"]
+        ax.plot(spyc.index, spyc.values, color="black", lw=1.5, ls="--", label="SPY")
+        ax.set_title(f"Same {n_long} picks, different weights (after {cost_bps} bps costs)")
+        ax.set_ylabel("Value of $1 invested")
+        ax.set_xlabel("Date")
+        ax.legend(fontsize=9)
+        ax.grid(alpha=0.3)
+        plt.tight_layout()
+        plt.show()
+    return pd.DataFrame(rows).set_index("scheme").round(3), results
+
+
+def _mv_inputs(tickers, start, end, drop_year=None):
+    r = to_returns(load_prices("M"))[list(tickers)].loc[str(start):str(end)].dropna()
+    if drop_year is not None:
+        r = r[r.index.year != int(drop_year)]
+    return r.mean() * 12, r.cov() * 12, r
+
+
+def mean_variance_weights(tickers=None, start="2015", end="2019", drop_year=None, long_only=False):
+    """'Optimal' weights from mean-variance optimization (the maximum-Sharpe portfolio) using
+    average past returns and past covariances as if they were the truth. With long_only=False
+    the optimizer may short (negative weights). Returns weights that sum to 1."""
+    tickers = PORTFOLIO_STOCKS if tickers is None else list(tickers)
+    mu, cov, _ = _mv_inputs(tickers, start, end, drop_year)
+    if not long_only:
+        w = np.linalg.solve(cov.values, mu.values)
+        w = w / w.sum()
+    else:
+        from scipy.optimize import minimize
+        n = len(tickers)
+        neg_sharpe = lambda x: -(x @ mu.values) / np.sqrt(x @ cov.values @ x)
+        res = minimize(neg_sharpe, np.ones(n) / n, bounds=[(0, 1)] * n,
+                       constraints=[{"type": "eq", "fun": lambda x: x.sum() - 1}], method="SLSQP")
+        w = res.x
+    return pd.Series(w, index=tickers).round(3)
+
+
+def fragility_experiment(tickers=None, start="2015", end="2019", drop_year=2018, plot=True):
+    """The 'optimal' portfolio is fragile. Estimate maximum-Sharpe weights on start-end, then
+    again after dropping ONE year of data, and compare. Shorting is allowed, as in the textbook
+    version. Returns a table of weights (as % of the portfolio)."""
+    tickers = PORTFOLIO_STOCKS if tickers is None else list(tickers)
+    a = mean_variance_weights(tickers, start, end) * 100
+    b = mean_variance_weights(tickers, start, end, drop_year=drop_year) * 100
+    lab_b = f"{start}–{end} without {drop_year}"
+    out = pd.DataFrame({f"{start}–{end}": a, lab_b: b, "Equal weight": 100 / len(tickers)})
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(10, 4.5))
+        x = np.arange(len(tickers))
+        ax.bar(x - 0.2, out.iloc[:, 0], 0.4, color=NAVY, label=out.columns[0])
+        ax.bar(x + 0.2, out.iloc[:, 1], 0.4, color=GOLD, label=out.columns[1])
+        ax.axhline(100 / len(tickers), color="black", ls="--", lw=1, label="Equal weight")
+        ax.axhline(0, color="black", lw=0.8)
+        ax.set_xticks(x, tickers)
+        ax.set_ylabel("Weight (% of the portfolio; below 0 = short)")
+        ax.set_title("'Optimal' mean-variance weights, estimated twice")
+        ax.legend(fontsize=9)
+        ax.grid(alpha=0.3, axis="y")
+        plt.tight_layout()
+        plt.show()
+    return out.round(1)
+
+
+def out_of_sample_check(tickers=None, est_start="2015", est_end="2019", test_start="2020", test_end="2025"):
+    """Hold the portfolios estimated on est_start-est_end through test_start-test_end (rebalanced
+    monthly to the same weights) and compare with equal weight: return, volatility, Sharpe."""
+    tickers = PORTFOLIO_STOCKS if tickers is None else list(tickers)
+    r = to_returns(load_prices("M"))[tickers].loc[str(test_start):str(test_end)].dropna()
+    rf = load_factors()["RF"].reindex(r.index).fillna(0)
+    ports = {"Mean-variance (shorting allowed)": mean_variance_weights(tickers, est_start, est_end),
+             "Mean-variance (long only)": mean_variance_weights(tickers, est_start, est_end, long_only=True),
+             "Equal weight": pd.Series(1 / len(tickers), index=tickers)}
+    rows = {}
+    for k, w in ports.items():
+        x = r @ w.reindex(tickers).values
+        cum = (1 + x).cumprod()
+        rows[k] = {"Ann. return": _ann(x), "Volatility": x.std() * np.sqrt(12),
+                   "Sharpe ratio": (x - rf).mean() / x.std() * np.sqrt(12),
+                   "Max drawdown": (cum / cum.cummax() - 1).min(),
+                   "Largest position": w.abs().max(), "Short positions": int((w < 0).sum())}
+    return pd.DataFrame(rows).T.round(3)
+
+
+def plot_frontier(tickers=None, start="2015", end="2019", n_portfolios=4000, seed=0, title=None):
+    """The efficient frontier as a picture: thousands of random long-only portfolios of the same
+    stocks, each a dot at its risk (volatility) and return. The upper-left edge of the cloud is the
+    'efficient frontier'; the stocks on their own are marked in gold."""
+    tickers = PORTFOLIO_STOCKS if tickers is None else list(tickers)
+    mu, cov, _ = _mv_inputs(tickers, start, end)
+    rng = np.random.default_rng(seed)
+    W = rng.dirichlet(np.ones(len(tickers)) * 0.4, n_portfolios)
+    ret = W @ mu.values
+    vol = np.sqrt(np.einsum("ij,jk,ik->i", W, cov.values, W))
+    plt = _plt()
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.scatter(vol * 100, ret * 100, s=4, color=NAVY, alpha=0.25, label="random portfolios")
+    sv = np.sqrt(np.diag(cov.values))
+    ax.scatter(sv * 100, mu.values * 100, s=60, color=GOLD, edgecolor="black", zorder=3, label="single stocks")
+    for t, x, y in zip(tickers, sv, mu.values):
+        ax.annotate(t, (x * 100, y * 100), xytext=(4, 3), textcoords="offset points", fontsize=8)
+    ew = np.ones(len(tickers)) / len(tickers)
+    ax.scatter([np.sqrt(ew @ cov.values @ ew) * 100], [ew @ mu.values * 100], marker="*", s=250,
+               color="white", edgecolor="black", zorder=4, label="equal weight")
+    ax.set_xlabel(f"Risk: volatility (% a year), {start}–{end}")
+    ax.set_ylabel(f"Average return (% a year), {start}–{end}")
+    ax.set_title(title or "The efficient frontier: the upper-left edge of the cloud")
+    ax.legend(fontsize=9, loc="lower right")
+    ax.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.show()
+
+
+
+# ---------------------------------------------------------------------------------------------
+# Week 12: the full pipeline (project template)
+# ---------------------------------------------------------------------------------------------
+MODEL_MENU = {
+    "boosting": "gradient-boosted trees (the course default)",
+    "forest": "random forest",
+    "logistic": "logistic regression (a straight-line model)",
+    "tree": "a single small decision tree",
+}
+
+
+def make_model(name="boosting", seed=0):
+    """The project's model menu. Every model predicts the chance a stock beats SPY next month.
+    name: "boosting", "forest", "logistic" or "tree" (see MODEL_MENU)."""
+    from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.tree import DecisionTreeClassifier
+    name = name.lower()
+    if name == "boosting":
+        return HistGradientBoostingClassifier(max_iter=200, learning_rate=0.05, max_depth=3, random_state=seed)
+    if name == "forest":
+        return RandomForestClassifier(n_estimators=100, min_samples_leaf=200, max_features=0.5, max_samples=0.25,
+                                      n_jobs=-1, random_state=seed)
+    if name == "logistic":
+        return make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+    if name == "tree":
+        return DecisionTreeClassifier(max_depth=4, min_samples_leaf=500, random_state=seed)
+    raise ValueError(f"model must be one of {list(MODEL_MENU)}")
+
+
+def monkey_portfolios(panel, n_funds=200, n_long=30, rebalance="Q", cost_bps=20, test_start="2015-01-01",
+                      seed=0, result=None, plot=True):
+    """'Could a monkey have done it?' Build n_funds funds that pick n_long stocks AT RANDOM from the
+    same universe on the same dates, pay the same trading costs, and compare. If many random funds
+    beat your fund, your edge is not convincing. Also shows how many random funds look 'significant'
+    (t-statistic above 2 against SPY) purely by chance. Pass result= to mark your own fund."""
+    rng = np.random.default_rng(seed)
+    step = {"M": 1, "Q": 3, "A": 12, "Y": 12}[rebalance.upper()[0]]
+    dates = sorted(d for d in panel["date"].unique() if d >= pd.Timestamp(test_start))
+    spy_next = panel.groupby("date")["spy_next"].first().reindex(dates)
+    keep = spy_next.notna().values
+    dates = [d for d, k in zip(dates, keep) if k]
+    spy_next = spy_next.reindex(dates)
+    nxt = to_returns(load_prices("M")).shift(-1)
+    universe = panel.groupby("date")["ticker"].apply(list)
+    rf = load_factors()["RF"]
+    rows, curves = [], []
+    for f in range(n_funds):
+        rets, held = [], []
+        for i, d in enumerate(dates):
+            cost = 0.0
+            if i % step == 0:
+                new = list(rng.choice(universe[d], min(n_long, len(universe[d])), replace=False))
+                overlap = len(set(new) & set(held)) / n_long if held else 0.0
+                cost = (2 * (1 - overlap) if held else 1.0) * cost_bps / 1e4
+                held = new
+            r = nxt.loc[d].reindex(held).fillna(0.0).mean() if d in nxt.index else 0.0
+            rets.append(r - cost)
+        x = pd.Series(rets, index=[d + pd.offsets.MonthEnd(1) for d in dates])
+        ex = x - spy_next.values
+        rows.append({"Ann. return": _ann(x), "Sharpe ratio": (x - rf.reindex(x.index).fillna(0)).mean() / x.std() * np.sqrt(12),
+                     "t-stat vs SPY": ex.mean() / ex.std() * np.sqrt(len(ex))})
+        curves.append(x)
+    t = pd.DataFrame(rows)
+    spy_ann = _ann(pd.Series(spy_next.values))
+    summary = {"random funds": n_funds,
+               "median random fund, ann. return": round(t["Ann. return"].median(), 3),
+               "SPY, ann. return": round(spy_ann, 3),
+               "random funds that beat SPY": f"{(t['Ann. return'] > spy_ann).mean():.0%}",
+               "random funds with t > 2 vs SPY ('significant' by luck)": f"{(t['t-stat vs SPY'] > 2).mean():.0%}"}
+    mine = None
+    if result is not None:
+        mine = result["stats"].loc["Ann. return", "Strategy (after costs)"]
+        summary["your fund, ann. return"] = round(mine, 3)
+        summary["random funds your fund beat"] = f"{(t['Ann. return'] < mine).mean():.0%}"
+    if plot:
+        plt = _plt()
+        fig, ax = plt.subplots(figsize=(9, 4.5))
+        ax.hist(t["Ann. return"] * 100, bins=30, color=GREY, edgecolor="white", label=f"{n_funds} random funds")
+        ax.axvline(spy_ann * 100, color="black", ls="--", lw=1.5, label=f"SPY {spy_ann:.1%}")
+        if mine is not None:
+            ax.axvline(mine * 100, color=GOLD, lw=3, label=f"your fund {mine:.1%}")
+        ax.set_xlabel(f"Annual return after {cost_bps} bps costs (%)")
+        ax.set_ylabel("Number of random funds")
+        ax.set_title(f"Could a monkey have done it? {n_long} random stocks, {dict(M='monthly', Q='quarterly', A='yearly').get(rebalance.upper()[0])}")
+        ax.legend(fontsize=9)
+        ax.grid(alpha=0.3, axis="y")
+        plt.tight_layout()
+        plt.show()
+    return pd.Series(summary, name="monkey test"), t.round(3)
+
+
+def portfolio_concentration(result, k=8):
+    """How many clusters (groups of stocks that move together, Week 9) the fund's most recent
+    picks fall into. Clusters are estimated on the 5 years before January of that year (the same
+    clusters a "cluster" or max_per_cluster backtest used)."""
+    last = max(result["picks"])
+    picks = result["picks"][last]
+    # same window the backtest uses: the 5 years before the first rebalance of that year
+    d0 = min(d for d in result["picks"] if d.year == last.year)
+    past = to_returns(load_prices("M")).loc[d0 - pd.DateOffset(years=5):d0 - pd.offsets.MonthEnd(1)]
+    labels = cluster_stocks(past, k=k, plot=False)
+    info = load_universe().drop_duplicates("ticker").set_index("ticker")
+    sec = info["sector"].reindex(labels.index)
+    names = {c: sec[labels.index[labels == c]].value_counts().index[0] for c in labels.unique()}
+    lab = labels.reindex(picks)
+    out = (lab.map(lambda c: f"cluster {int(c)}: mostly {names[c]}" if pd.notna(c) else "not clustered (new stock)")
+           .value_counts().rename("picks").to_frame())
+    print(f"Picks on {last:%b %Y}: {len(picks)} stocks in {lab.nunique()} of {k} clusters; "
+          f"the largest cluster holds {out['picks'].max()} of them.")
+    return out
+
+
+def fund_summary(result, panel, monkey=None, name="Our fund"):
+    """The numbers for the pitch, in one table."""
+    st = result["stats"]
+    ex = (result["returns"]["strategy"] - result["returns"]["SPY"]).dropna()
+    hit = pick_hit_rate(result, panel)
+    rows = {
+        "Annual return after costs": f"{st.loc['Ann. return', 'Strategy (after costs)']:.1%}",
+        "SPY annual return": f"{st.loc['Ann. return', 'SPY']:.1%}",
+        "Sharpe ratio (SPY)": f"{st.loc['Sharpe ratio', 'Strategy (after costs)']:.2f} ({st.loc['Sharpe ratio', 'SPY']:.2f})",
+        "Worst drawdown (SPY)": f"{st.loc['Max drawdown', 'Strategy (after costs)']:.0%} ({st.loc['Max drawdown', 'SPY']:.0%})",
+        "Turnover per year": f"{st.loc['Turnover/yr', 'Strategy (after costs)']:.1f}x",
+        "Picks that beat SPY next month (all stocks)": f"{hit.iloc[0]:.1%} ({hit.iloc[1]:.1%})",
+        "Edge over SPY, t-statistic": f"{ex.mean() / ex.std() * np.sqrt(len(ex)):.2f}",
+        "Test period": f"{result['returns'].index.min():%b %Y} – {result['returns'].index.max():%b %Y}",
+    }
+    if monkey is not None and "random funds your fund beat" in monkey:
+        rows["Random funds beaten"] = monkey["random funds your fund beat"]
+    return pd.Series(rows, name=name).to_frame()
+
 # ---------------------------------------------------------------------------------------------
 # Plots
 # ---------------------------------------------------------------------------------------------
@@ -1426,6 +1739,120 @@ def sentiment_dictionary(text):
         return one(text)
     return pd.Series([one(t) for t in text], index=getattr(text, "index", None), name="lm_sentiment")
 
+
+
+def dictionary_label(text, neutral_band=0.0):
+    """Turn the dictionary score into a label: positive (> band), negative (< -band), else neutral."""
+    sc = sentiment_dictionary(text)
+    if isinstance(sc, float):
+        return "positive" if sc > neutral_band else "negative" if sc < -neutral_band else "neutral"
+    return pd.Series(np.where(sc > neutral_band, "positive", np.where(sc < -neutral_band, "negative", "neutral")),
+                     index=sc.index, name="dictionary_label")
+
+
+def dictionary_words(text):
+    """Which Loughran-McDonald positive and negative words appear in a piece of text."""
+    sentiment_dictionary("warm up")
+    pos, neg = _cache["_lm"]
+    words = _WORD.findall(str(text).lower())
+    return {"positive": [w for w in words if w in pos], "negative": [w for w in words if w in neg]}
+
+
+def text_classifier(vocab_size=2000):
+    """A simple trainable text model: TF-IDF word (and two-word) counts + logistic regression.
+    vocab_size = how many of the most common words/phrases it may use (None = all)."""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import make_pipeline
+    return make_pipeline(TfidfVectorizer(max_features=vocab_size, ngram_range=(1, 2), min_df=2, sublinear_tf=True),
+                         LogisticRegression(max_iter=2000, C=5))
+
+
+def headline_split(headlines=None, test_size=0.25, seed=0):
+    """Split the labelled headlines into training and test sets (same label mix in both)."""
+    from sklearn.model_selection import train_test_split
+    h = load_headlines() if headlines is None else headlines
+    return train_test_split(h, test_size=test_size, random_state=seed, stratify=h["label"])
+
+
+def text_experiment(vocab_size=2000, test_size=0.25, seed=0):
+    """Three ways to label financial headlines, graded on the same unseen test headlines:
+    always say 'neutral' (the most common label), the Loughran-McDonald dictionary, and a
+    classifier trained on the other headlines. Returns (accuracy table, fitted classifier, test set)."""
+    train, test = headline_split(test_size=test_size, seed=seed)
+    clf = text_classifier(vocab_size).fit(train["text"], train["label"])
+    pred = clf.predict(test["text"])
+    acc = pd.Series({
+        "always 'neutral'": (test["label"] == "neutral").mean(),
+        "finance dictionary (Loughran-McDonald)": (dictionary_label(test["text"]).values == test["label"].values).mean(),
+        f"trained classifier ({vocab_size or 'all'} words)": (pred == test["label"].values).mean(),
+    }, name="accuracy on unseen headlines").round(3)
+    print(f"Trained on {len(train):,} labelled headlines, tested on {len(test):,} it never saw.")
+    return acc.to_frame(), clf, test
+
+
+def vocab_experiment(sizes=(50, 100, 500, 2000, None), seed=0):
+    """Accuracy on the training and the test headlines as the classifier is allowed more words."""
+    train, test = headline_split(seed=seed)
+    rows = []
+    for v in sizes:
+        clf = text_classifier(v).fit(train["text"], train["label"])
+        rows.append({"words allowed": v or "all", "train accuracy": (clf.predict(train["text"]) == train["label"]).mean(),
+                     "test accuracy": (clf.predict(test["text"]) == test["label"]).mean()})
+    return pd.DataFrame(rows).set_index("words allowed").round(3)
+
+
+def text_confusion(test, clf=None):
+    """Rows = what the human labellers said; columns = what the method said."""
+    pred = clf.predict(test["text"]) if clf is not None else dictionary_label(test["text"]).values
+    order = ["negative", "neutral", "positive"]
+    return pd.crosstab(pd.Categorical(test["label"], order), pd.Categorical(pred, order),
+                       rownames=["human label"], colnames=["predicted"], dropna=False)
+
+
+def dictionary_mistakes(n=10, seed=1, agreement=100):
+    """Headlines where every human labeller agreed, but the dictionary disagreed with them."""
+    h = load_headlines()
+    h = h[h["agreement"] >= agreement]
+    d = dictionary_label(h["text"])
+    wrong = h[d != h["label"]].assign(dictionary=d[d != h["label"]])
+    out = wrong.sample(min(n, len(wrong)), random_state=seed)
+    out = out.assign(words_found=[dictionary_words(t) for t in out["text"]])
+    print(f"The dictionary disagrees with unanimous human labels on {len(wrong):,} of {len(h):,} headlines "
+          f"({len(wrong) / len(h):.0%}).")
+    return out[["text", "label", "dictionary", "words_found"]].rename(columns={"label": "human"})
+
+
+def plot_top_words(clf, n=12, title=None):
+    """The words and phrases that push the classifier most toward 'positive' and toward 'negative'."""
+    vec, lr = clf.steps[0][1], clf.steps[-1][1]
+    names = np.array(vec.get_feature_names_out())
+    classes = list(lr.classes_)
+    plt = _plt()
+    fig, axes = plt.subplots(1, 2, figsize=(11, 0.32 * n + 1.5))
+    for ax, cl, col in zip(axes, ["positive", "negative"], [GOLD, NAVY]):
+        coef = lr.coef_[classes.index(cl)]
+        idx = np.argsort(coef)[-n:]
+        ax.barh(names[idx], coef[idx], color=col)
+        ax.set_title(f"Words that push toward '{cl}'")
+        ax.set_xlabel("Weight in the model")
+        ax.grid(alpha=0.3, axis="x")
+    fig.suptitle(title or "What the text classifier learned", fontsize=12)
+    plt.tight_layout()
+    plt.show()
+
+
+def score_headlines(texts, clf):
+    """Score your own headlines with both methods, side by side."""
+    texts = list(texts)
+    proba = clf.predict_proba(texts)
+    out = pd.DataFrame({"headline": texts,
+                        "dictionary score": sentiment_dictionary(pd.Series(texts)).round(2).values,
+                        "dictionary label": dictionary_label(pd.Series(texts)).values,
+                        "classifier label": clf.predict(texts),
+                        "classifier confidence": proba.max(axis=1).round(2),
+                        "dictionary words found": [dictionary_words(t) for t in texts]})
+    return out
 
 # ---------------------------------------------------------------------------------------------
 # Week 1: the overfitting game
